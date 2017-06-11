@@ -14,7 +14,8 @@ namespace DaoHamTichPhanGioiHan
 {
     public partial class MainForm : Form
     {
-        public string document;
+        const string INFINITY_SYMBOL = "\u221E";
+        string document;
 
         public MainForm()
         {
@@ -52,6 +53,8 @@ namespace DaoHamTichPhanGioiHan
                     \begin{document}
                     {\huge
                     ";
+            infinityButton.Text = INFINITY_SYMBOL;
+            directionComboBox.SelectedIndex = 0;
         }
 
         private void solveButton_Click(object sender, EventArgs e)
@@ -72,6 +75,27 @@ namespace DaoHamTichPhanGioiHan
             }
 
             waitingLabel.Visible = false;
+        }
+
+        private void directionComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (directionComboBox.SelectedIndex)
+            {
+                case 0:
+                    signLabel.Text = "";
+                    break;
+                case 1:
+                    signLabel.Text = "-";
+                    break;
+                case 2:
+                    signLabel.Text = "+";
+                    break;
+            }
+        }
+
+        private void infinityButton_Click(object sender, EventArgs e)
+        {
+            limTextBox2.Text += INFINITY_SYMBOL;
         }
     }
 }
