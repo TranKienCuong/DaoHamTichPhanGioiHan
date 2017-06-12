@@ -24,34 +24,45 @@ namespace DaoHamTichPhanGioiHan
 
         public void DisplayText(string text)
         {
-            document += text;
-            document += @"  }
+            try
+            {
+                document += text;
+                document += @"  }
                         \end{document}
                         ";
-            File.WriteAllText("input.tex", document);
+                File.WriteAllText("input.tex", document);
 
-            Process process = new Process();
-            process.StartInfo.FileName = "batch.bat";
-            process.StartInfo.Arguments = "input";
-            process.StartInfo.UseShellExecute = false;
-            process.StartInfo.CreateNoWindow = true;
+                Process process = new Process();
+                process.StartInfo.FileName = "batch.bat";
+                process.StartInfo.Arguments = "input";
+                process.StartInfo.UseShellExecute = false;
+                process.StartInfo.CreateNoWindow = true;
 
-            process.Start();
-            process.WaitForExit();
+                process.Start();
+                process.WaitForExit(5000);
 
-            resultPictureBox.ImageLocation = "output.png";
+                resultPictureBox.ImageLocation = "output.png";
 
-            document = @"\documentclass[12pt,a4paper]{slides}
+                document = @"\documentclass[12pt,b5paper]{report}
+                    \usepackage{amsmath}
                     \begin{document}
-                    {\huge
+                    \pagestyle{empty}
+                    {\Huge
                     ";
+            }
+            catch
+            {
+                resultPictureBox.Image = Properties.Resources.error;
+            }
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            document = @"\documentclass[12pt,a4paper]{slides}
+            document = @"\documentclass[12pt,b5paper]{report}
+                    \usepackage{amsmath}
                     \begin{document}
-                    {\huge
+                    \pagestyle{empty}
+                    {\Huge
                     ";
             infinityButton.Text = INFINITY_SYMBOL;
             directionComboBox.SelectedIndex = 0;
@@ -71,6 +82,9 @@ namespace DaoHamTichPhanGioiHan
                     break;
                 case 2: // limit
                     DisplayText(@"\[ \lim_{x \to a} \frac{f(x) - f(a)}{x - a}. \]");
+                    break;
+                case 3:
+                    DisplayText(richTextBox1.Text);
                     break;
             }
 

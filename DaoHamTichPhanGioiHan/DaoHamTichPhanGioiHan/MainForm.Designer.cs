@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.solveButton = new System.Windows.Forms.Button();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -75,6 +77,9 @@
             this.limTextBox1 = new System.Windows.Forms.TextBox();
             this.limTextBox3 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.waitingLabel = new System.Windows.Forms.Label();
             this.resultPictureBox = new System.Windows.Forms.PictureBox();
@@ -91,18 +96,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resultPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // solveButton
             // 
-            this.solveButton.Location = new System.Drawing.Point(489, 18);
+            this.solveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(100)))), ((int)(((byte)(255)))), ((int)(((byte)(100)))));
+            this.solveButton.FlatAppearance.BorderSize = 0;
+            this.solveButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(100)))), ((int)(((byte)(255)))), ((int)(((byte)(100)))));
+            this.solveButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(100)))), ((int)(((byte)(255)))), ((int)(((byte)(100)))));
+            this.solveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.solveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.solveButton.Location = new System.Drawing.Point(370, 32);
             this.solveButton.Margin = new System.Windows.Forms.Padding(4);
             this.solveButton.Name = "solveButton";
-            this.solveButton.Size = new System.Drawing.Size(126, 39);
+            this.solveButton.Size = new System.Drawing.Size(119, 39);
             this.solveButton.TabIndex = 2;
             this.solveButton.Text = "Tính";
-            this.solveButton.UseVisualStyleBackColor = true;
+            this.solveButton.UseVisualStyleBackColor = false;
             this.solveButton.Click += new System.EventHandler(this.solveButton_Click);
             // 
             // tabControl
@@ -110,7 +122,9 @@
             this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Controls.Add(this.tabPage2);
             this.tabControl.Controls.Add(this.tabPage3);
-            this.tabControl.Location = new System.Drawing.Point(14, 18);
+            this.tabControl.Controls.Add(this.tabPage7);
+            this.tabControl.ImageList = this.imageList1;
+            this.tabControl.Location = new System.Drawing.Point(24, 72);
             this.tabControl.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
@@ -123,6 +137,7 @@
             this.tabPage1.Controls.Add(this.diffTextBox2);
             this.tabPage1.Controls.Add(this.diffTextBox1);
             this.tabPage1.Controls.Add(this.pictureBox2);
+            this.tabPage1.ImageIndex = 0;
             this.tabPage1.Location = new System.Drawing.Point(4, 27);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
@@ -176,6 +191,7 @@
             // 
             this.tabPage2.Controls.Add(this.tabControl1);
             this.tabPage2.Controls.Add(this.label4);
+            this.tabPage2.ImageIndex = 1;
             this.tabPage2.Location = new System.Drawing.Point(4, 27);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
@@ -190,6 +206,7 @@
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage6);
+            this.tabControl1.ImageList = this.imageList1;
             this.tabControl1.Location = new System.Drawing.Point(7, 7);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -203,6 +220,7 @@
             this.tabPage4.Controls.Add(this.intTextBox4);
             this.tabPage4.Controls.Add(this.intTextBox1);
             this.tabPage4.Controls.Add(this.pictureBox3);
+            this.tabPage4.ImageIndex = 1;
             this.tabPage4.Location = new System.Drawing.Point(4, 27);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -268,6 +286,7 @@
             this.tabPage5.Controls.Add(this.int2TextBox6);
             this.tabPage5.Controls.Add(this.int2TextBox1);
             this.tabPage5.Controls.Add(this.pictureBox4);
+            this.tabPage5.ImageIndex = 2;
             this.tabPage5.Location = new System.Drawing.Point(4, 27);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
@@ -364,6 +383,7 @@
             this.tabPage6.Controls.Add(this.int3TextBox8);
             this.tabPage6.Controls.Add(this.int3TextBox1);
             this.tabPage6.Controls.Add(this.pictureBox5);
+            this.tabPage6.ImageIndex = 3;
             this.tabPage6.Location = new System.Drawing.Point(4, 27);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Size = new System.Drawing.Size(435, 363);
@@ -495,6 +515,7 @@
             this.tabPage3.Controls.Add(this.limTextBox1);
             this.tabPage3.Controls.Add(this.limTextBox3);
             this.tabPage3.Controls.Add(this.pictureBox1);
+            this.tabPage3.ImageIndex = 4;
             this.tabPage3.Location = new System.Drawing.Point(4, 27);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -593,10 +614,40 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.richTextBox1);
+            this.tabPage7.Location = new System.Drawing.Point(4, 27);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(457, 504);
+            this.tabPage7.TabIndex = 3;
+            this.tabPage7.Text = "Test";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(31, 82);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(373, 84);
+            this.richTextBox1.TabIndex = 0;
+            this.richTextBox1.Text = "";
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "dh.png");
+            this.imageList1.Images.SetKeyName(1, "tp.png");
+            this.imageList1.Images.SetKeyName(2, "tp2.png");
+            this.imageList1.Images.SetKeyName(3, "tp3.png");
+            this.imageList1.Images.SetKeyName(4, "gh.png");
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(496, 72);
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(527, 45);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 18);
             this.label1.TabIndex = 4;
@@ -605,8 +656,9 @@
             // waitingLabel
             // 
             this.waitingLabel.AutoSize = true;
+            this.waitingLabel.BackColor = System.Drawing.Color.White;
             this.waitingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.waitingLabel.Location = new System.Drawing.Point(641, 39);
+            this.waitingLabel.Location = new System.Drawing.Point(820, 45);
             this.waitingLabel.Name = "waitingLabel";
             this.waitingLabel.Size = new System.Drawing.Size(79, 18);
             this.waitingLabel.TabIndex = 5;
@@ -615,11 +667,12 @@
             // 
             // resultPictureBox
             // 
+            this.resultPictureBox.BackColor = System.Drawing.Color.White;
             this.resultPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.resultPictureBox.Location = new System.Drawing.Point(489, 94);
+            this.resultPictureBox.Location = new System.Drawing.Point(517, 32);
             this.resultPictureBox.Margin = new System.Windows.Forms.Padding(4);
             this.resultPictureBox.Name = "resultPictureBox";
-            this.resultPictureBox.Size = new System.Drawing.Size(332, 455);
+            this.resultPictureBox.Size = new System.Drawing.Size(403, 575);
             this.resultPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.resultPictureBox.TabIndex = 1;
             this.resultPictureBox.TabStop = false;
@@ -628,7 +681,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(839, 566);
+            this.BackgroundImage = global::DaoHamTichPhanGioiHan.Properties.Resources.background;
+            this.ClientSize = new System.Drawing.Size(950, 638);
             this.Controls.Add(this.waitingLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tabControl);
@@ -659,6 +713,7 @@
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tabPage7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.resultPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -716,6 +771,9 @@
         private System.Windows.Forms.TextBox int3TextBox8;
         private System.Windows.Forms.TextBox int3TextBox1;
         private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.TabPage tabPage7;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }
 

@@ -99,7 +99,25 @@
     <None Include="Resources\tichphan3.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\background.png" />
+    <None Include="Resources\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tp2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tp3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
