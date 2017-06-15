@@ -66,6 +66,7 @@
             this.int3TextBox8 = new System.Windows.Forms.TextBox();
             this.int3TextBox1 = new System.Windows.Forms.TextBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.infinityButton = new System.Windows.Forms.Button();
@@ -79,7 +80,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.waitingLabel = new System.Windows.Forms.Label();
             this.resultPictureBox = new System.Windows.Forms.PictureBox();
@@ -494,6 +494,16 @@
             this.pictureBox5.TabIndex = 13;
             this.pictureBox5.TabStop = false;
             // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "dh.png");
+            this.imageList1.Images.SetKeyName(1, "tp.png");
+            this.imageList1.Images.SetKeyName(2, "tp2.png");
+            this.imageList1.Images.SetKeyName(3, "tp3.png");
+            this.imageList1.Images.SetKeyName(4, "gh.png");
+            // 
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -633,23 +643,14 @@
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "dh.png");
-            this.imageList1.Images.SetKeyName(1, "tp.png");
-            this.imageList1.Images.SetKeyName(2, "tp2.png");
-            this.imageList1.Images.SetKeyName(3, "tp3.png");
-            this.imageList1.Images.SetKeyName(4, "gh.png");
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(527, 45);
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Location = new System.Drawing.Point(517, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 18);
+            this.label1.Size = new System.Drawing.Size(64, 20);
             this.label1.TabIndex = 4;
             this.label1.Text = "Kết quả:";
             // 
@@ -657,10 +658,11 @@
             // 
             this.waitingLabel.AutoSize = true;
             this.waitingLabel.BackColor = System.Drawing.Color.White;
+            this.waitingLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.waitingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.waitingLabel.Location = new System.Drawing.Point(820, 45);
+            this.waitingLabel.Location = new System.Drawing.Point(599, 18);
             this.waitingLabel.Name = "waitingLabel";
-            this.waitingLabel.Size = new System.Drawing.Size(79, 18);
+            this.waitingLabel.Size = new System.Drawing.Size(81, 20);
             this.waitingLabel.TabIndex = 5;
             this.waitingLabel.Text = "đang tính...";
             this.waitingLabel.Visible = false;

@@ -16,6 +16,18 @@ namespace DaoHamTichPhanGioiHan
     {
         const string INFINITY_SYMBOL = "\u221E";
         string document;
+        string beginDoc = @"
+            \documentclass[12pt,a4paper]{report}
+            \usepackage{amssymb}
+            \usepackage{amsmath}
+            \usepackage[utf8]{inputenc}
+            \usepackage[vietnamese]{babel}
+            \usepackage[margin=0.5cm]{geometry}
+            \begin{document}
+            \pagestyle{empty}
+            \fussy
+            {\Huge";
+        string endDoc = @"}\end{document}";
 
         public MainForm()
         {
@@ -27,9 +39,7 @@ namespace DaoHamTichPhanGioiHan
             try
             {
                 document += text;
-                document += @"  }
-                        \end{document}
-                        ";
+                document += endDoc;
                 File.WriteAllText("input.tex", document);
 
                 Process process = new Process();
@@ -39,16 +49,11 @@ namespace DaoHamTichPhanGioiHan
                 process.StartInfo.CreateNoWindow = true;
 
                 process.Start();
-                process.WaitForExit(5000);
+                process.WaitForExit(15000);
 
                 resultPictureBox.ImageLocation = "output.png";
 
-                document = @"\documentclass[12pt,b5paper]{report}
-                    \usepackage{amsmath}
-                    \begin{document}
-                    \pagestyle{empty}
-                    {\Huge
-                    ";
+                document = beginDoc;
             }
             catch
             {
@@ -58,12 +63,7 @@ namespace DaoHamTichPhanGioiHan
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            document = @"\documentclass[12pt,b5paper]{report}
-                    \usepackage{amsmath}
-                    \begin{document}
-                    \pagestyle{empty}
-                    {\Huge
-                    ";
+            document = beginDoc;
             infinityButton.Text = INFINITY_SYMBOL;
             directionComboBox.SelectedIndex = 0;
         }
