@@ -83,6 +83,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.waitingLabel = new System.Windows.Forms.Label();
             this.resultPictureBox = new System.Windows.Forms.PictureBox();
+            this.piButton = new System.Windows.Forms.Button();
+            this.sigmaButton = new System.Windows.Forms.Button();
+            this.cbrtButton = new System.Windows.Forms.Button();
+            this.sqrtButton = new System.Windows.Forms.Button();
+            this.resetButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.noteLabel = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -98,20 +108,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resultPictureBox)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // solveButton
             // 
-            this.solveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(100)))), ((int)(((byte)(255)))), ((int)(((byte)(100)))));
+            this.solveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(100)))), ((int)(((byte)(255)))), ((int)(((byte)(100)))));
             this.solveButton.FlatAppearance.BorderSize = 0;
-            this.solveButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(100)))), ((int)(((byte)(255)))), ((int)(((byte)(100)))));
-            this.solveButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(100)))), ((int)(((byte)(255)))), ((int)(((byte)(100)))));
+            this.solveButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(100)))), ((int)(((byte)(255)))), ((int)(((byte)(100)))));
+            this.solveButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(100)))), ((int)(((byte)(255)))), ((int)(((byte)(100)))));
             this.solveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.solveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.solveButton.Location = new System.Drawing.Point(370, 32);
+            this.solveButton.Location = new System.Drawing.Point(370, 125);
             this.solveButton.Margin = new System.Windows.Forms.Padding(4);
             this.solveButton.Name = "solveButton";
-            this.solveButton.Size = new System.Drawing.Size(119, 39);
+            this.solveButton.Size = new System.Drawing.Size(115, 39);
             this.solveButton.TabIndex = 2;
             this.solveButton.Text = "Tính";
             this.solveButton.UseVisualStyleBackColor = false;
@@ -124,11 +135,11 @@
             this.tabControl.Controls.Add(this.tabPage3);
             this.tabControl.Controls.Add(this.tabPage7);
             this.tabControl.ImageList = this.imageList1;
-            this.tabControl.Location = new System.Drawing.Point(24, 72);
+            this.tabControl.Location = new System.Drawing.Point(24, 172);
             this.tabControl.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(465, 535);
+            this.tabControl.Size = new System.Drawing.Size(465, 435);
             this.tabControl.TabIndex = 3;
             // 
             // tabPage1
@@ -142,7 +153,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Size = new System.Drawing.Size(457, 504);
+            this.tabPage1.Size = new System.Drawing.Size(457, 404);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Đạo hàm";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -150,7 +161,7 @@
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(18, 365);
+            this.label5.Location = new System.Drawing.Point(15, 248);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(416, 92);
             this.label5.TabIndex = 4;
@@ -161,26 +172,28 @@
             // diffTextBox2
             // 
             this.diffTextBox2.Font = new System.Drawing.Font("Cambria", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.diffTextBox2.Location = new System.Drawing.Point(177, 199);
+            this.diffTextBox2.Location = new System.Drawing.Point(177, 157);
             this.diffTextBox2.Name = "diffTextBox2";
             this.diffTextBox2.Size = new System.Drawing.Size(134, 31);
             this.diffTextBox2.TabIndex = 3;
             this.diffTextBox2.Text = "x";
             this.diffTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.diffTextBox2.Enter += new System.EventHandler(this.textBox_Enter);
             // 
             // diffTextBox1
             // 
             this.diffTextBox1.Font = new System.Drawing.Font("Cambria", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.diffTextBox1.Location = new System.Drawing.Point(102, 111);
+            this.diffTextBox1.Location = new System.Drawing.Point(102, 69);
             this.diffTextBox1.Name = "diffTextBox1";
             this.diffTextBox1.Size = new System.Drawing.Size(285, 31);
             this.diffTextBox1.TabIndex = 2;
             this.diffTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.diffTextBox1.Enter += new System.EventHandler(this.textBox_Enter);
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::DaoHamTichPhanGioiHan.Properties.Resources.daoham;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 86);
+            this.pictureBox2.Location = new System.Drawing.Point(3, 44);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(447, 155);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -196,7 +209,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(457, 504);
+            this.tabPage2.Size = new System.Drawing.Size(457, 404);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Tích phân";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -210,7 +223,7 @@
             this.tabControl1.Location = new System.Drawing.Point(7, 7);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(443, 394);
+            this.tabControl1.Size = new System.Drawing.Size(443, 323);
             this.tabControl1.TabIndex = 6;
             // 
             // tabPage4
@@ -224,7 +237,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 27);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(435, 363);
+            this.tabPage4.Size = new System.Drawing.Size(435, 292);
             this.tabPage4.TabIndex = 0;
             this.tabPage4.Text = "Tích phân";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -237,6 +250,7 @@
             this.intTextBox3.Size = new System.Drawing.Size(205, 31);
             this.intTextBox3.TabIndex = 1;
             this.intTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.intTextBox3.Enter += new System.EventHandler(this.textBox_Enter);
             // 
             // intTextBox2
             // 
@@ -246,6 +260,7 @@
             this.intTextBox2.Size = new System.Drawing.Size(55, 28);
             this.intTextBox2.TabIndex = 4;
             this.intTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.intTextBox2.Enter += new System.EventHandler(this.textBox_Enter);
             // 
             // intTextBox4
             // 
@@ -256,6 +271,7 @@
             this.intTextBox4.TabIndex = 2;
             this.intTextBox4.Text = "x";
             this.intTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.intTextBox4.Enter += new System.EventHandler(this.textBox_Enter);
             // 
             // intTextBox1
             // 
@@ -265,6 +281,7 @@
             this.intTextBox1.Size = new System.Drawing.Size(53, 28);
             this.intTextBox1.TabIndex = 3;
             this.intTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.intTextBox1.Enter += new System.EventHandler(this.textBox_Enter);
             // 
             // pictureBox3
             // 
@@ -290,7 +307,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 27);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(435, 363);
+            this.tabPage5.Size = new System.Drawing.Size(435, 292);
             this.tabPage5.TabIndex = 1;
             this.tabPage5.Text = "Tích phân kép";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -304,6 +321,7 @@
             this.int2TextBox7.TabIndex = 12;
             this.int2TextBox7.Text = "y";
             this.int2TextBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.int2TextBox7.Enter += new System.EventHandler(this.textBox_Enter);
             // 
             // int2TextBox3
             // 
@@ -313,6 +331,7 @@
             this.int2TextBox3.Size = new System.Drawing.Size(37, 28);
             this.int2TextBox3.TabIndex = 11;
             this.int2TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.int2TextBox3.Enter += new System.EventHandler(this.textBox_Enter);
             // 
             // int2TextBox4
             // 
@@ -322,6 +341,7 @@
             this.int2TextBox4.Size = new System.Drawing.Size(37, 28);
             this.int2TextBox4.TabIndex = 10;
             this.int2TextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.int2TextBox4.Enter += new System.EventHandler(this.textBox_Enter);
             // 
             // int2TextBox5
             // 
@@ -331,6 +351,7 @@
             this.int2TextBox5.Size = new System.Drawing.Size(138, 31);
             this.int2TextBox5.TabIndex = 6;
             this.int2TextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.int2TextBox5.Enter += new System.EventHandler(this.textBox_Enter);
             // 
             // int2TextBox2
             // 
@@ -340,6 +361,7 @@
             this.int2TextBox2.Size = new System.Drawing.Size(37, 28);
             this.int2TextBox2.TabIndex = 9;
             this.int2TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.int2TextBox2.Enter += new System.EventHandler(this.textBox_Enter);
             // 
             // int2TextBox6
             // 
@@ -350,6 +372,7 @@
             this.int2TextBox6.TabIndex = 7;
             this.int2TextBox6.Text = "x";
             this.int2TextBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.int2TextBox6.Enter += new System.EventHandler(this.textBox_Enter);
             // 
             // int2TextBox1
             // 
@@ -359,6 +382,7 @@
             this.int2TextBox1.Size = new System.Drawing.Size(37, 28);
             this.int2TextBox1.TabIndex = 8;
             this.int2TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.int2TextBox1.Enter += new System.EventHandler(this.textBox_Enter);
             // 
             // pictureBox4
             // 
@@ -386,7 +410,7 @@
             this.tabPage6.ImageIndex = 3;
             this.tabPage6.Location = new System.Drawing.Point(4, 27);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(435, 363);
+            this.tabPage6.Size = new System.Drawing.Size(435, 292);
             this.tabPage6.TabIndex = 2;
             this.tabPage6.Text = "Tích phân bội ba";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -399,6 +423,7 @@
             this.int3TextBox4.Size = new System.Drawing.Size(27, 28);
             this.int3TextBox4.TabIndex = 24;
             this.int3TextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.int3TextBox4.Enter += new System.EventHandler(this.textBox_Enter);
             // 
             // int3TextBox6
             // 
@@ -408,6 +433,7 @@
             this.int3TextBox6.Size = new System.Drawing.Size(27, 28);
             this.int3TextBox6.TabIndex = 23;
             this.int3TextBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.int3TextBox6.Enter += new System.EventHandler(this.textBox_Enter);
             // 
             // int3TextBox2
             // 
@@ -417,6 +443,7 @@
             this.int3TextBox2.Size = new System.Drawing.Size(27, 28);
             this.int3TextBox2.TabIndex = 22;
             this.int3TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.int3TextBox2.Enter += new System.EventHandler(this.textBox_Enter);
             // 
             // int3TextBox10
             // 
@@ -427,6 +454,7 @@
             this.int3TextBox10.TabIndex = 21;
             this.int3TextBox10.Text = "z";
             this.int3TextBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.int3TextBox10.Enter += new System.EventHandler(this.textBox_Enter);
             // 
             // int3TextBox9
             // 
@@ -437,6 +465,7 @@
             this.int3TextBox9.TabIndex = 20;
             this.int3TextBox9.Text = "y";
             this.int3TextBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.int3TextBox9.Enter += new System.EventHandler(this.textBox_Enter);
             // 
             // int3TextBox3
             // 
@@ -446,6 +475,7 @@
             this.int3TextBox3.Size = new System.Drawing.Size(27, 28);
             this.int3TextBox3.TabIndex = 19;
             this.int3TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.int3TextBox3.Enter += new System.EventHandler(this.textBox_Enter);
             // 
             // int3TextBox5
             // 
@@ -455,6 +485,7 @@
             this.int3TextBox5.Size = new System.Drawing.Size(27, 28);
             this.int3TextBox5.TabIndex = 18;
             this.int3TextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.int3TextBox5.Enter += new System.EventHandler(this.textBox_Enter);
             // 
             // int3TextBox7
             // 
@@ -464,6 +495,7 @@
             this.int3TextBox7.Size = new System.Drawing.Size(104, 31);
             this.int3TextBox7.TabIndex = 14;
             this.int3TextBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.int3TextBox7.Enter += new System.EventHandler(this.textBox_Enter);
             // 
             // int3TextBox8
             // 
@@ -474,6 +506,7 @@
             this.int3TextBox8.TabIndex = 15;
             this.int3TextBox8.Text = "x";
             this.int3TextBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.int3TextBox8.Enter += new System.EventHandler(this.textBox_Enter);
             // 
             // int3TextBox1
             // 
@@ -483,6 +516,7 @@
             this.int3TextBox1.Size = new System.Drawing.Size(27, 28);
             this.int3TextBox1.TabIndex = 16;
             this.int3TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.int3TextBox1.Enter += new System.EventHandler(this.textBox_Enter);
             // 
             // pictureBox5
             // 
@@ -507,7 +541,7 @@
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(20, 404);
+            this.label4.Location = new System.Drawing.Point(28, 346);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(410, 49);
             this.label4.TabIndex = 5;
@@ -529,7 +563,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 27);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(457, 504);
+            this.tabPage3.Size = new System.Drawing.Size(457, 404);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Giới hạn";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -537,7 +571,7 @@
             // infinityButton
             // 
             this.infinityButton.Font = new System.Drawing.Font("Cambria", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.infinityButton.Location = new System.Drawing.Point(165, 406);
+            this.infinityButton.Location = new System.Drawing.Point(168, 300);
             this.infinityButton.Name = "infinityButton";
             this.infinityButton.Size = new System.Drawing.Size(37, 31);
             this.infinityButton.TabIndex = 8;
@@ -547,7 +581,7 @@
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(6, 383);
+            this.label3.Location = new System.Drawing.Point(9, 277);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(445, 70);
             this.label3.TabIndex = 7;
@@ -561,7 +595,7 @@
             "Không có",
             "Giới hạn trái (-)",
             "Giới hạn phải (+)"});
-            this.directionComboBox.Location = new System.Drawing.Point(10, 331);
+            this.directionComboBox.Location = new System.Drawing.Point(10, 231);
             this.directionComboBox.Name = "directionComboBox";
             this.directionComboBox.Size = new System.Drawing.Size(140, 26);
             this.directionComboBox.TabIndex = 6;
@@ -571,7 +605,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 306);
+            this.label2.Location = new System.Drawing.Point(6, 206);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(305, 22);
             this.label2.TabIndex = 5;
@@ -580,17 +614,18 @@
             // limTextBox2
             // 
             this.limTextBox2.Font = new System.Drawing.Font("Cambria", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.limTextBox2.Location = new System.Drawing.Point(95, 172);
+            this.limTextBox2.Location = new System.Drawing.Point(98, 134);
             this.limTextBox2.Name = "limTextBox2";
             this.limTextBox2.Size = new System.Drawing.Size(46, 28);
             this.limTextBox2.TabIndex = 3;
             this.limTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.limTextBox2.Enter += new System.EventHandler(this.textBox_Enter);
             // 
             // signLabel
             // 
             this.signLabel.AutoSize = true;
             this.signLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signLabel.Location = new System.Drawing.Point(125, 152);
+            this.signLabel.Location = new System.Drawing.Point(128, 114);
             this.signLabel.Name = "signLabel";
             this.signLabel.Size = new System.Drawing.Size(0, 26);
             this.signLabel.TabIndex = 4;
@@ -598,26 +633,28 @@
             // limTextBox1
             // 
             this.limTextBox1.Font = new System.Drawing.Font("Cambria", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.limTextBox1.Location = new System.Drawing.Point(15, 172);
+            this.limTextBox1.Location = new System.Drawing.Point(18, 134);
             this.limTextBox1.Name = "limTextBox1";
             this.limTextBox1.Size = new System.Drawing.Size(44, 28);
             this.limTextBox1.TabIndex = 2;
             this.limTextBox1.Text = "x";
             this.limTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.limTextBox1.Enter += new System.EventHandler(this.textBox_Enter);
             // 
             // limTextBox3
             // 
             this.limTextBox3.Font = new System.Drawing.Font("Cambria", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.limTextBox3.Location = new System.Drawing.Point(165, 131);
+            this.limTextBox3.Location = new System.Drawing.Point(168, 93);
             this.limTextBox3.Name = "limTextBox3";
             this.limTextBox3.Size = new System.Drawing.Size(255, 31);
             this.limTextBox3.TabIndex = 1;
             this.limTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.limTextBox3.Enter += new System.EventHandler(this.textBox_Enter);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::DaoHamTichPhanGioiHan.Properties.Resources.gioihan;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 73);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 35);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(451, 152);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -630,7 +667,7 @@
             this.tabPage7.Location = new System.Drawing.Point(4, 27);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(457, 504);
+            this.tabPage7.Size = new System.Drawing.Size(457, 404);
             this.tabPage7.TabIndex = 3;
             this.tabPage7.Text = "Test";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -679,12 +716,135 @@
             this.resultPictureBox.TabIndex = 1;
             this.resultPictureBox.TabStop = false;
             // 
+            // piButton
+            // 
+            this.piButton.Location = new System.Drawing.Point(119, 54);
+            this.piButton.Name = "piButton";
+            this.piButton.Size = new System.Drawing.Size(99, 33);
+            this.piButton.TabIndex = 13;
+            this.piButton.Text = "Pi";
+            this.piButton.UseVisualStyleBackColor = true;
+            this.piButton.Click += new System.EventHandler(this.piButton_Click);
+            // 
+            // sigmaButton
+            // 
+            this.sigmaButton.Location = new System.Drawing.Point(14, 54);
+            this.sigmaButton.Name = "sigmaButton";
+            this.sigmaButton.Size = new System.Drawing.Size(99, 33);
+            this.sigmaButton.TabIndex = 12;
+            this.sigmaButton.Text = "Xích ma";
+            this.sigmaButton.UseVisualStyleBackColor = true;
+            this.sigmaButton.Click += new System.EventHandler(this.sigmaButton_Click);
+            // 
+            // cbrtButton
+            // 
+            this.cbrtButton.Location = new System.Drawing.Point(119, 15);
+            this.cbrtButton.Name = "cbrtButton";
+            this.cbrtButton.Size = new System.Drawing.Size(99, 33);
+            this.cbrtButton.TabIndex = 11;
+            this.cbrtButton.Text = "Căn bậc 3";
+            this.cbrtButton.UseVisualStyleBackColor = true;
+            this.cbrtButton.Click += new System.EventHandler(this.cbrtButton_Click);
+            // 
+            // sqrtButton
+            // 
+            this.sqrtButton.Location = new System.Drawing.Point(14, 15);
+            this.sqrtButton.Name = "sqrtButton";
+            this.sqrtButton.Size = new System.Drawing.Size(99, 33);
+            this.sqrtButton.TabIndex = 10;
+            this.sqrtButton.Text = "Căn bậc 2";
+            this.sqrtButton.UseVisualStyleBackColor = true;
+            this.sqrtButton.Click += new System.EventHandler(this.sqrtButton_Click);
+            // 
+            // resetButton
+            // 
+            this.resetButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(100)))));
+            this.resetButton.FlatAppearance.BorderSize = 0;
+            this.resetButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(100)))));
+            this.resetButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(100)))));
+            this.resetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.resetButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resetButton.Location = new System.Drawing.Point(370, 78);
+            this.resetButton.Margin = new System.Windows.Forms.Padding(4);
+            this.resetButton.Name = "resetButton";
+            this.resetButton.Size = new System.Drawing.Size(115, 39);
+            this.resetButton.TabIndex = 15;
+            this.resetButton.Text = "Đặt lại";
+            this.resetButton.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(224, 15);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(99, 33);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Vô cực";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.noteLabel);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.cbrtButton);
+            this.panel1.Controls.Add(this.piButton);
+            this.panel1.Controls.Add(this.sigmaButton);
+            this.panel1.Controls.Add(this.sqrtButton);
+            this.panel1.Location = new System.Drawing.Point(24, 37);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(334, 128);
+            this.panel1.TabIndex = 16;
+            // 
+            // noteLabel
+            // 
+            this.noteLabel.AutoSize = true;
+            this.noteLabel.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.noteLabel.ForeColor = System.Drawing.Color.Green;
+            this.noteLabel.Location = new System.Drawing.Point(18, 90);
+            this.noteLabel.Name = "noteLabel";
+            this.noteLabel.Size = new System.Drawing.Size(57, 21);
+            this.noteLabel.TabIndex = 15;
+            this.noteLabel.Text = "label6";
+            this.noteLabel.Visible = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.White;
+            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label6.Location = new System.Drawing.Point(24, 22);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(91, 20);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Phím hỗ trợ:";
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(100)))));
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(100)))));
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(100)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(370, 31);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(115, 39);
+            this.button2.TabIndex = 18;
+            this.button2.Text = "Cài đặt";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::DaoHamTichPhanGioiHan.Properties.Resources.background;
             this.ClientSize = new System.Drawing.Size(950, 638);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.resetButton);
             this.Controls.Add(this.waitingLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tabControl);
@@ -697,6 +857,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đạo hàm - Tích phân - Giới hạn";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.Enter += new System.EventHandler(this.textBox_Enter);
             this.tabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -717,6 +878,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.resultPictureBox)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -776,6 +939,16 @@
         private System.Windows.Forms.TabPage tabPage7;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.Button piButton;
+        private System.Windows.Forms.Button sigmaButton;
+        private System.Windows.Forms.Button cbrtButton;
+        private System.Windows.Forms.Button sqrtButton;
+        private System.Windows.Forms.Button resetButton;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label noteLabel;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button2;
     }
 }
 

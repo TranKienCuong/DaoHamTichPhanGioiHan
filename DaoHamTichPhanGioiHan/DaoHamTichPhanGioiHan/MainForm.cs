@@ -15,6 +15,13 @@ namespace DaoHamTichPhanGioiHan
     public partial class MainForm : Form
     {
         const string INFINITY_SYMBOL = "\u221E";
+        const string SQRT_SYMBOL = "\u221A";
+        const string CBRT_SYMBOL = "\u221B";
+        const string DIFF_SYMBOL = "\u2211";
+        const string PI_SYMBOL = "\u220F";
+
+        private TextBox focusedTextBox;
+
         string document;
         string beginDoc = @"
             \documentclass[12pt,a4paper]{report}
@@ -107,9 +114,48 @@ namespace DaoHamTichPhanGioiHan
             }
         }
 
+        private void textBox_Enter(object sender, EventArgs e)
+        {
+            focusedTextBox = (TextBox)sender;
+        }
+
         private void infinityButton_Click(object sender, EventArgs e)
         {
             limTextBox2.Text += INFINITY_SYMBOL;
+        }
+
+        private void sqrtButton_Click(object sender, EventArgs e)
+        {
+            if (focusedTextBox != null)
+            {
+                focusedTextBox.Text += SQRT_SYMBOL;
+            }
+        }
+
+        private void cbrtButton_Click(object sender, EventArgs e)
+        {
+            if (focusedTextBox != null)
+            {
+                focusedTextBox.Text += CBRT_SYMBOL;
+            }
+        }
+
+        private void sigmaButton_Click(object sender, EventArgs e)
+        {
+            noteLabel.Visible = true;
+            noteLabel.Text = "Cú pháp là :" + DIFF_SYMBOL + " [i= , ]( nội dung)";
+            if (focusedTextBox != null)
+            {
+                focusedTextBox.Text += DIFF_SYMBOL;
+            }
+        }
+
+        private void piButton_Click(object sender, EventArgs e)
+        {
+            if (focusedTextBox != null)
+            {
+                focusedTextBox.Text += PI_SYMBOL;
+            }
         }
     }
 }
