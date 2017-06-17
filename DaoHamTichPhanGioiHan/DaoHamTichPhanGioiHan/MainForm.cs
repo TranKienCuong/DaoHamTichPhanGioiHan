@@ -36,9 +36,39 @@ namespace DaoHamTichPhanGioiHan
             {\Huge";
         string endDoc = @"}\end{document}";
 
+        StreamReader reader;
+        StreamWriter writer;
+
         public MainForm()
         {
             InitializeComponent();
+        }
+
+        public string Solve(string input)
+        {
+            writer = File.CreateText("input.mpl");
+            writer.WriteLine("packageDir:= cat(currentdir(), kernelopts(dirsep) , \"DoAn.mla\"):");
+            writer.WriteLine("march('open', packageDir):");
+
+            writer.WriteLine("A:=" + input);
+            writer.WriteLine("S:= GiaiChiTiet(A);");
+            writer.WriteLine("XuatLoiGiai(A,S);");
+
+            writer.Close();
+
+            ProcessStartInfo processInfo = new ProcessStartInfo();
+            processInfo.FileName = "solve.bat";
+            processInfo.UseShellExecute = false;
+            processInfo.CreateNoWindow = true;
+
+            Process process = Process.Start(processInfo);
+            process.WaitForExit();
+
+            reader = File.OpenText("input.tex");
+            string text = reader.ReadToEnd();
+            reader.Close();
+
+            return text;
         }
 
         public void DisplayText(string text)
@@ -50,7 +80,7 @@ namespace DaoHamTichPhanGioiHan
                 File.WriteAllText("input.tex", document);
 
                 Process process = new Process();
-                process.StartInfo.FileName = "batch.bat";
+                process.StartInfo.FileName = "display.bat";
                 process.StartInfo.Arguments = "input";
                 process.StartInfo.UseShellExecute = false;
                 process.StartInfo.CreateNoWindow = true;
@@ -77,7 +107,7 @@ namespace DaoHamTichPhanGioiHan
 
         private void solveButton_Click(object sender, EventArgs e)
         {
-            waitingLabel.Visible = true;
+            waitingLabel.Visible = true;            
 
             switch (tabControl.SelectedIndex)
             {
@@ -91,7 +121,8 @@ namespace DaoHamTichPhanGioiHan
                     DisplayText(@"\[ \lim_{x \to a} \frac{f(x) - f(a)}{x - a}. \]");
                     break;
                 case 3:
-                    DisplayText(richTextBox1.Text);
+                    string text = Solve(richTextBox1.Text);
+                    DisplayText(text);
                     break;
             }
 
@@ -138,6 +169,14 @@ namespace DaoHamTichPhanGioiHan
             {
                 focusedTextBox.Text += CBRT_SYMBOL;
             }
+        }     
+
+        private void piButton_Click(object sender, EventArgs e)
+        {
+            if (focusedTextBox != null)
+            {
+                focusedTextBox.Text += PI_SYMBOL;
+            }
         }
 
         private void sigmaButton_Click(object sender, EventArgs e)
@@ -147,14 +186,6 @@ namespace DaoHamTichPhanGioiHan
             if (focusedTextBox != null)
             {
                 focusedTextBox.Text += DIFF_SYMBOL;
-            }
-        }
-
-        private void piButton_Click(object sender, EventArgs e)
-        {
-            if (focusedTextBox != null)
-            {
-                focusedTextBox.Text += PI_SYMBOL;
             }
         }
     }
