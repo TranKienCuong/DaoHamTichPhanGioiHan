@@ -140,14 +140,6 @@ namespace DaoHamTichPhanGioiHan
             }
         }
 
-        private void piButton_Click(object sender, EventArgs e)
-        {
-            if (focusedTextBox != null)
-            {
-                focusedTextBox.Text += PI_SYMBOL;
-            }
-        }
-
         private void sigmaButton_Click(object sender, EventArgs e)
         {
             noteLabel.Visible = true;
@@ -155,6 +147,14 @@ namespace DaoHamTichPhanGioiHan
             if (focusedTextBox != null)
             {
                 focusedTextBox.Text += DIFF_SYMBOL;
+            }
+        }
+
+        private void piButton_Click(object sender, EventArgs e)
+        {
+            if (focusedTextBox != null)
+            {
+                focusedTextBox.Text += PI_SYMBOL;
             }
         }
     }
