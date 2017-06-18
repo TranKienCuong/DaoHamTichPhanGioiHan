@@ -86,7 +86,7 @@ namespace DaoHamTichPhanGioiHan
                 process.StartInfo.CreateNoWindow = true;
 
                 process.Start();
-                process.WaitForExit(15000);
+                process.WaitForExit(20000);
 
                 resultPictureBox.ImageLocation = "output.png";
 
@@ -107,24 +107,71 @@ namespace DaoHamTichPhanGioiHan
 
         private void solveButton_Click(object sender, EventArgs e)
         {
-            waitingLabel.Visible = true;            
+            waitingLabel.Visible = true;
 
-            switch (tabControl.SelectedIndex)
+            string input = "";
+            switch (mainTabControl.SelectedIndex)
             {
                 case 0: // differential
-                    DisplayText(@"\[ \frac{\partial Q}{\partial t} = \frac{\partial s}{\partial t} \]");
+                    if (diffTextBox2.Text == "")
+                        input = "lhs(DaoHam(" + diffTextBox1.Text + ", 0));";
+                    else
+                        input = "Diff(" + diffTextBox1.Text + ", " + diffTextBox2.Text + ");";
                     break;
                 case 1: // integral
-                    DisplayText(@"\[ \int_{0}^{\pi} \ (sin x + cos x )\, dx = 2. \]");
+                    input = "Int(";
+                    switch (intTabControl.SelectedIndex)
+                    {
+                        case 0: // single integral
+                            input += (intTextBox3.Text + ", " + intTextBox4.Text);
+                            if (intTextBox1.Text != "" && intTextBox2.Text != "")
+                                input += ("=" + intTextBox2.Text + ".." + intTextBox1.Text);
+                            input += ");";
+                                break;
+                        case 1: // double integral
+                            input += ("Int(" + int2TextBox5.Text + ", " + int2TextBox6.Text);
+                            if (int2TextBox3.Text != "" && int2TextBox4.Text != "")
+                                input += ("=" + int2TextBox4.Text + ".." + int2TextBox3.Text);
+                            input += ("), " + int2TextBox7.Text);
+                            if (int2TextBox1.Text != "" && int2TextBox2.Text != "")
+                                input += ("=" + int2TextBox2.Text + ".." + int2TextBox1.Text);
+                            input += ");";
+                            break;
+                        case 2: // triple integral
+                            input += ("Int(Int(" + int3TextBox7.Text + ", " + int3TextBox8.Text);
+                            if (int3TextBox5.Text != "" && int3TextBox6.Text != "")
+                                input += ("=" + int3TextBox6.Text + ".." + int3TextBox5.Text);
+                            input += ("), " + int3TextBox9.Text);
+                            if (int3TextBox3.Text != "" && int3TextBox4.Text != "")
+                                input += ("=" + int3TextBox4.Text + ".." + int3TextBox3.Text);
+                            input += ("), " + int3TextBox10.Text);
+                            if (int3TextBox1.Text != "" && int3TextBox2.Text != "")
+                                input += ("=" + int3TextBox2.Text + ".." + int3TextBox1.Text);
+                            input += ");";
+                            break;
+                    }
                     break;
                 case 2: // limit
-                    DisplayText(@"\[ \lim_{x \to a} \frac{f(x) - f(a)}{x - a}. \]");
+                    input = "Limit(" + limTextBox3.Text + ", " + limTextBox1.Text + " = " + limTextBox2.Text;
+                    switch (directionComboBox.SelectedIndex)
+                    {
+                        case 0: // no direction
+                            input += ");";
+                            break;
+                        case 1: // left direction
+                            input += ", left);";
+                            break;
+                        case 2: // right direction
+                            input += ", right);";
+                            break;
+                    }
                     break;
-                case 3:
-                    string text = Solve(richTextBox1.Text);
-                    DisplayText(text);
+                case 3: // test
+                    input = richTextBox1.Text;
                     break;
             }
+            string text = Solve(input);
+            DisplayText(text);
 
             waitingLabel.Visible = false;
         }

@@ -31,14 +31,14 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.solveButton = new System.Windows.Forms.Button();
-            this.tabControl = new System.Windows.Forms.TabControl();
+            this.mainTabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label5 = new System.Windows.Forms.Label();
             this.diffTextBox2 = new System.Windows.Forms.TextBox();
             this.diffTextBox1 = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.intTabControl = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.intTextBox3 = new System.Windows.Forms.TextBox();
             this.intTextBox2 = new System.Windows.Forms.TextBox();
@@ -92,12 +92,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.noteLabel = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.tabControl.SuspendLayout();
+            this.settingsButton = new System.Windows.Forms.Button();
+            this.mainTabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabPage2.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.intTabControl.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.tabPage5.SuspendLayout();
@@ -128,19 +128,19 @@
             this.solveButton.UseVisualStyleBackColor = false;
             this.solveButton.Click += new System.EventHandler(this.solveButton_Click);
             // 
-            // tabControl
+            // mainTabControl
             // 
-            this.tabControl.Controls.Add(this.tabPage1);
-            this.tabControl.Controls.Add(this.tabPage2);
-            this.tabControl.Controls.Add(this.tabPage3);
-            this.tabControl.Controls.Add(this.tabPage7);
-            this.tabControl.ImageList = this.imageList1;
-            this.tabControl.Location = new System.Drawing.Point(24, 172);
-            this.tabControl.Margin = new System.Windows.Forms.Padding(4);
-            this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(465, 435);
-            this.tabControl.TabIndex = 3;
+            this.mainTabControl.Controls.Add(this.tabPage1);
+            this.mainTabControl.Controls.Add(this.tabPage2);
+            this.mainTabControl.Controls.Add(this.tabPage3);
+            this.mainTabControl.Controls.Add(this.tabPage7);
+            this.mainTabControl.ImageList = this.imageList1;
+            this.mainTabControl.Location = new System.Drawing.Point(24, 172);
+            this.mainTabControl.Margin = new System.Windows.Forms.Padding(4);
+            this.mainTabControl.Name = "mainTabControl";
+            this.mainTabControl.SelectedIndex = 0;
+            this.mainTabControl.Size = new System.Drawing.Size(465, 435);
+            this.mainTabControl.TabIndex = 3;
             // 
             // tabPage1
             // 
@@ -202,7 +202,7 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.tabControl1);
+            this.tabPage2.Controls.Add(this.intTabControl);
             this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.ImageIndex = 1;
             this.tabPage2.Location = new System.Drawing.Point(4, 27);
@@ -214,17 +214,17 @@
             this.tabPage2.Text = "Tích phân";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // tabControl1
+            // intTabControl
             // 
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Controls.Add(this.tabPage5);
-            this.tabControl1.Controls.Add(this.tabPage6);
-            this.tabControl1.ImageList = this.imageList1;
-            this.tabControl1.Location = new System.Drawing.Point(7, 7);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(443, 323);
-            this.tabControl1.TabIndex = 6;
+            this.intTabControl.Controls.Add(this.tabPage4);
+            this.intTabControl.Controls.Add(this.tabPage5);
+            this.intTabControl.Controls.Add(this.tabPage6);
+            this.intTabControl.ImageList = this.imageList1;
+            this.intTabControl.Location = new System.Drawing.Point(7, 7);
+            this.intTabControl.Name = "intTabControl";
+            this.intTabControl.SelectedIndex = 0;
+            this.intTabControl.Size = new System.Drawing.Size(443, 323);
+            this.intTabControl.TabIndex = 6;
             // 
             // tabPage4
             // 
@@ -819,21 +819,21 @@
             this.label6.TabIndex = 17;
             this.label6.Text = "Phím hỗ trợ:";
             // 
-            // button2
+            // settingsButton
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(100)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(100)))));
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(100)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(370, 31);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(115, 39);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "Cài đặt";
-            this.button2.UseVisualStyleBackColor = false;
+            this.settingsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(100)))));
+            this.settingsButton.FlatAppearance.BorderSize = 0;
+            this.settingsButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(100)))));
+            this.settingsButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(100)))));
+            this.settingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.settingsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.settingsButton.Location = new System.Drawing.Point(370, 31);
+            this.settingsButton.Margin = new System.Windows.Forms.Padding(4);
+            this.settingsButton.Name = "settingsButton";
+            this.settingsButton.Size = new System.Drawing.Size(115, 39);
+            this.settingsButton.TabIndex = 18;
+            this.settingsButton.Text = "Cài đặt";
+            this.settingsButton.UseVisualStyleBackColor = false;
             // 
             // MainForm
             // 
@@ -841,13 +841,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::DaoHamTichPhanGioiHan.Properties.Resources.background;
             this.ClientSize = new System.Drawing.Size(950, 638);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.settingsButton);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.resetButton);
             this.Controls.Add(this.waitingLabel);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.tabControl);
+            this.Controls.Add(this.mainTabControl);
             this.Controls.Add(this.solveButton);
             this.Controls.Add(this.resultPictureBox);
             this.DoubleBuffered = true;
@@ -858,12 +858,12 @@
             this.Text = "Đạo hàm - Tích phân - Giới hạn";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.Enter += new System.EventHandler(this.textBox_Enter);
-            this.tabControl.ResumeLayout(false);
+            this.mainTabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            this.tabControl1.ResumeLayout(false);
+            this.intTabControl.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -888,7 +888,7 @@
         #endregion
         private System.Windows.Forms.PictureBox resultPictureBox;
         private System.Windows.Forms.Button solveButton;
-        private System.Windows.Forms.TabControl tabControl;
+        private System.Windows.Forms.TabControl mainTabControl;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
@@ -913,7 +913,7 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl intTabControl;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.TabPage tabPage6;
@@ -948,7 +948,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label noteLabel;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button settingsButton;
     }
 }
 
