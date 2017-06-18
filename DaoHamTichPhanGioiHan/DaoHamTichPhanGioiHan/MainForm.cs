@@ -17,7 +17,7 @@ namespace DaoHamTichPhanGioiHan
         const string INFINITY_SYMBOL = "\u221E";
         const string SQRT_SYMBOL = "\u221A";
         const string CBRT_SYMBOL = "\u221B";
-        const string DIFF_SYMBOL = "\u2211";
+        const string SIGMA_SYMBOL = "\u2211";
         const string PI_SYMBOL = "\u220F";
 
         private TextBox focusedTextBox;
@@ -39,20 +39,39 @@ namespace DaoHamTichPhanGioiHan
         StreamReader reader;
         StreamWriter writer;
 
+        int displayResultOption = 0;
+
         public MainForm()
         {
             InitializeComponent();
         }
 
-        public string Solve(string input)
+        public string Solve(string input, int option)
         {
             writer = File.CreateText("input.mpl");
             writer.WriteLine("packageDir:= cat(currentdir(), kernelopts(dirsep) , \"DoAn.mla\"):");
-            writer.WriteLine("march('open', packageDir):");
+            writer.WriteLine("march('open', packageDir):");        
 
-            writer.WriteLine("A:=" + input);
-            writer.WriteLine("S:= GiaiChiTiet(A);");
-            writer.WriteLine("XuatLoiGiai(A,S);");
+            switch (option)
+            {
+                case 0: // display steps with explanation
+                    writer.WriteLine("A := " + input + ";");
+                    writer.WriteLine("S := GiaiChiTiet(A);");
+                    writer.WriteLine("XuatLoiGiai(A, S, true);");
+                    break;
+                case 1: // display steps
+                    writer.WriteLine("A := " + input + ";");
+                    writer.WriteLine("S := GiaiChiTiet(A);");
+                    writer.WriteLine("XuatLoiGiai(A, S, false);");
+                    break;
+                case 2: // display result only
+                    string result = input.Replace("Diff", "diff")
+                        .Replace("Int", "int")
+                        .Replace("Limit", "limit");
+                    writer.WriteLine("S := " + input + " = " + result + ";");
+                    writer.WriteLine("XuatKetQua(S);");
+                    break;
+            }
 
             writer.Close();
 
@@ -69,6 +88,11 @@ namespace DaoHamTichPhanGioiHan
             reader.Close();
 
             return text;
+        }
+
+        public void FindResult(string input)
+        {
+
         }
 
         public void DisplayText(string text)
@@ -98,10 +122,21 @@ namespace DaoHamTichPhanGioiHan
             }
         }
 
+        public void InsertSymbol(string symbol, int length)
+        {
+            if (focusedTextBox != null)
+            {
+                int selectionStart = focusedTextBox.SelectionStart;
+                focusedTextBox.Text = focusedTextBox.Text.Insert(selectionStart, symbol);
+                focusedTextBox.Focus();
+                focusedTextBox.DeselectAll();
+                focusedTextBox.SelectionStart = selectionStart + length;
+            }
+        }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
             document = beginDoc;
-            infinityButton.Text = INFINITY_SYMBOL;
             directionComboBox.SelectedIndex = 0;
         }
 
@@ -114,9 +149,9 @@ namespace DaoHamTichPhanGioiHan
             {
                 case 0: // differential
                     if (diffTextBox2.Text == "")
-                        input = "lhs(DaoHam(" + diffTextBox1.Text + ", 0));";
+                        input = "Diff(" + diffTextBox1.Text + ", op(indets(" + diffTextBox1.Text + ", name)))";
                     else
-                        input = "Diff(" + diffTextBox1.Text + ", " + diffTextBox2.Text + ");";
+                        input = "Diff(" + diffTextBox1.Text + ", " + diffTextBox2.Text + ")";
                     break;
                 case 1: // integral
                     input = "Int(";
@@ -126,7 +161,7 @@ namespace DaoHamTichPhanGioiHan
                             input += (intTextBox3.Text + ", " + intTextBox4.Text);
                             if (intTextBox1.Text != "" && intTextBox2.Text != "")
                                 input += ("=" + intTextBox2.Text + ".." + intTextBox1.Text);
-                            input += ");";
+                            input += ")";
                                 break;
                         case 1: // double integral
                             input += ("Int(" + int2TextBox5.Text + ", " + int2TextBox6.Text);
@@ -135,7 +170,7 @@ namespace DaoHamTichPhanGioiHan
                             input += ("), " + int2TextBox7.Text);
                             if (int2TextBox1.Text != "" && int2TextBox2.Text != "")
                                 input += ("=" + int2TextBox2.Text + ".." + int2TextBox1.Text);
-                            input += ");";
+                            input += ")";
                             break;
                         case 2: // triple integral
                             input += ("Int(Int(" + int3TextBox7.Text + ", " + int3TextBox8.Text);
@@ -147,7 +182,7 @@ namespace DaoHamTichPhanGioiHan
                             input += ("), " + int3TextBox10.Text);
                             if (int3TextBox1.Text != "" && int3TextBox2.Text != "")
                                 input += ("=" + int3TextBox2.Text + ".." + int3TextBox1.Text);
-                            input += ");";
+                            input += ")";
                             break;
                     }
                     break;
@@ -156,13 +191,13 @@ namespace DaoHamTichPhanGioiHan
                     switch (directionComboBox.SelectedIndex)
                     {
                         case 0: // no direction
-                            input += ");";
+                            input += ")";
                             break;
                         case 1: // left direction
-                            input += ", left);";
+                            input += ", left)";
                             break;
                         case 2: // right direction
-                            input += ", right);";
+                            input += ", right)";
                             break;
                     }
                     break;
@@ -170,7 +205,12 @@ namespace DaoHamTichPhanGioiHan
                     input = richTextBox1.Text;
                     break;
             }
-            string text = Solve(input);
+            input = input.Replace(INFINITY_SYMBOL, "infinity")
+                .Replace(SQRT_SYMBOL, "sqrt")
+                .Replace(CBRT_SYMBOL, "cbrt")
+                .Replace(PI_SYMBOL, "pi")
+                .Replace(SIGMA_SYMBOL, "sum");
+            string text = Solve(input, displayResultOption);
             DisplayText(text);
 
             waitingLabel.Visible = false;
@@ -199,41 +239,89 @@ namespace DaoHamTichPhanGioiHan
 
         private void infinityButton_Click(object sender, EventArgs e)
         {
-            limTextBox2.Text += INFINITY_SYMBOL;
+            InsertSymbol(INFINITY_SYMBOL, 1);
         }
 
         private void sqrtButton_Click(object sender, EventArgs e)
         {
-            if (focusedTextBox != null)
-            {
-                focusedTextBox.Text += SQRT_SYMBOL;
-            }
+            InsertSymbol(SQRT_SYMBOL + "(", 2);
         }
 
         private void cbrtButton_Click(object sender, EventArgs e)
         {
-            if (focusedTextBox != null)
-            {
-                focusedTextBox.Text += CBRT_SYMBOL;
-            }
+            InsertSymbol(CBRT_SYMBOL + "(", 2);
         }     
 
         private void piButton_Click(object sender, EventArgs e)
         {
-            if (focusedTextBox != null)
-            {
-                focusedTextBox.Text += PI_SYMBOL;
-            }
+            InsertSymbol(PI_SYMBOL, 1);
         }
 
         private void sigmaButton_Click(object sender, EventArgs e)
         {
             noteLabel.Visible = true;
-            noteLabel.Text = "Cú pháp là :" + DIFF_SYMBOL + " [i= , ]( nội dung)";
-            if (focusedTextBox != null)
+            noteLabel.Text = "Cú pháp là :" + SIGMA_SYMBOL + " [i= , ]( nội dung)";
+            InsertSymbol(SIGMA_SYMBOL + "(", 2);
+        }
+
+        private void resetButton_Click(object sender, EventArgs e)
+        {
+            switch (mainTabControl.SelectedIndex)
             {
-                focusedTextBox.Text += DIFF_SYMBOL;
+                case 0:
+                    diffTextBox1.Clear();
+                    diffTextBox2.Text = "x";
+                    break;
+                case 1:
+                    switch (intTabControl.SelectedIndex)
+                    {
+                        case 0:
+                            intTextBox1.Clear();
+                            intTextBox2.Clear();
+                            intTextBox3.Clear();
+                            intTextBox4.Text = "x";
+                            break;
+                        case 1:
+                            int2TextBox1.Clear();
+                            int2TextBox2.Clear();
+                            int2TextBox3.Clear();
+                            int2TextBox4.Clear();
+                            int2TextBox5.Clear();
+                            int2TextBox6.Text = "x";
+                            int2TextBox7.Text = "y";
+                            break;
+                        case 2:
+                            int3TextBox1.Clear();
+                            int3TextBox2.Clear();
+                            int3TextBox3.Clear();
+                            int3TextBox4.Clear();
+                            int3TextBox5.Clear();
+                            int3TextBox6.Clear();
+                            int3TextBox7.Clear();
+                            int3TextBox8.Text = "x";
+                            int3TextBox9.Text = "y";
+                            int3TextBox10.Text = "z";
+                            break;
+                    }
+                    break;
+                case 2:
+                    limTextBox1.Text = "x";
+                    limTextBox2.Clear();
+                    limTextBox3.Clear();
+                    directionComboBox.SelectedIndex = 0;
+                    break;
+                case 3:
+                    richTextBox1.Clear();
+                    break;
             }
+        }
+
+        private void settingsButton_Click(object sender, EventArgs e)
+        {
+            SettingsForm settingsForm = new SettingsForm();
+            settingsForm.displayResultOption = this.displayResultOption;
+            if (settingsForm.ShowDialog() == DialogResult.OK)
+                this.displayResultOption = settingsForm.displayResultOption;
         }
     }
 }

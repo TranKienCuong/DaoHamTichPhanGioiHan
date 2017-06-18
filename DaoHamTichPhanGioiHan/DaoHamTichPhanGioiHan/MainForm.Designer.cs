@@ -69,8 +69,6 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.infinityButton = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.directionComboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.limTextBox2 = new System.Windows.Forms.TextBox();
@@ -88,7 +86,7 @@
             this.cbrtButton = new System.Windows.Forms.Button();
             this.sqrtButton = new System.Windows.Forms.Button();
             this.resetButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.infinityButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.noteLabel = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -149,11 +147,11 @@
             this.tabPage1.Controls.Add(this.diffTextBox1);
             this.tabPage1.Controls.Add(this.pictureBox2);
             this.tabPage1.ImageIndex = 0;
-            this.tabPage1.Location = new System.Drawing.Point(4, 27);
+            this.tabPage1.Location = new System.Drawing.Point(4, 26);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Size = new System.Drawing.Size(457, 404);
+            this.tabPage1.Size = new System.Drawing.Size(457, 405);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Đạo hàm";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -205,11 +203,11 @@
             this.tabPage2.Controls.Add(this.intTabControl);
             this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.ImageIndex = 1;
-            this.tabPage2.Location = new System.Drawing.Point(4, 27);
+            this.tabPage2.Location = new System.Drawing.Point(4, 26);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(457, 404);
+            this.tabPage2.Size = new System.Drawing.Size(457, 405);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Tích phân";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -234,10 +232,10 @@
             this.tabPage4.Controls.Add(this.intTextBox1);
             this.tabPage4.Controls.Add(this.pictureBox3);
             this.tabPage4.ImageIndex = 1;
-            this.tabPage4.Location = new System.Drawing.Point(4, 27);
+            this.tabPage4.Location = new System.Drawing.Point(4, 26);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(435, 292);
+            this.tabPage4.Size = new System.Drawing.Size(435, 293);
             this.tabPage4.TabIndex = 0;
             this.tabPage4.Text = "Tích phân";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -245,7 +243,7 @@
             // intTextBox3
             // 
             this.intTextBox3.Font = new System.Drawing.Font("Cambria", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.intTextBox3.Location = new System.Drawing.Point(85, 108);
+            this.intTextBox3.Location = new System.Drawing.Point(86, 108);
             this.intTextBox3.Name = "intTextBox3";
             this.intTextBox3.Size = new System.Drawing.Size(205, 31);
             this.intTextBox3.TabIndex = 1;
@@ -276,9 +274,9 @@
             // intTextBox1
             // 
             this.intTextBox1.Font = new System.Drawing.Font("Cambria", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.intTextBox1.Location = new System.Drawing.Point(59, 54);
+            this.intTextBox1.Location = new System.Drawing.Point(58, 54);
             this.intTextBox1.Name = "intTextBox1";
-            this.intTextBox1.Size = new System.Drawing.Size(53, 28);
+            this.intTextBox1.Size = new System.Drawing.Size(54, 28);
             this.intTextBox1.TabIndex = 3;
             this.intTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.intTextBox1.Enter += new System.EventHandler(this.textBox_Enter);
@@ -304,10 +302,10 @@
             this.tabPage5.Controls.Add(this.int2TextBox1);
             this.tabPage5.Controls.Add(this.pictureBox4);
             this.tabPage5.ImageIndex = 2;
-            this.tabPage5.Location = new System.Drawing.Point(4, 27);
+            this.tabPage5.Location = new System.Drawing.Point(4, 26);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(435, 292);
+            this.tabPage5.Size = new System.Drawing.Size(435, 293);
             this.tabPage5.TabIndex = 1;
             this.tabPage5.Text = "Tích phân kép";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -336,7 +334,7 @@
             // int2TextBox4
             // 
             this.int2TextBox4.Font = new System.Drawing.Font("Cambria", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.int2TextBox4.Location = new System.Drawing.Point(78, 153);
+            this.int2TextBox4.Location = new System.Drawing.Point(78, 152);
             this.int2TextBox4.Name = "int2TextBox4";
             this.int2TextBox4.Size = new System.Drawing.Size(37, 28);
             this.int2TextBox4.TabIndex = 10;
@@ -346,7 +344,7 @@
             // int2TextBox5
             // 
             this.int2TextBox5.Font = new System.Drawing.Font("Cambria", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.int2TextBox5.Location = new System.Drawing.Point(113, 107);
+            this.int2TextBox5.Location = new System.Drawing.Point(112, 107);
             this.int2TextBox5.Name = "int2TextBox5";
             this.int2TextBox5.Size = new System.Drawing.Size(138, 31);
             this.int2TextBox5.TabIndex = 6;
@@ -356,7 +354,7 @@
             // int2TextBox2
             // 
             this.int2TextBox2.Font = new System.Drawing.Font("Cambria", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.int2TextBox2.Location = new System.Drawing.Point(26, 153);
+            this.int2TextBox2.Location = new System.Drawing.Point(26, 152);
             this.int2TextBox2.Name = "int2TextBox2";
             this.int2TextBox2.Size = new System.Drawing.Size(37, 28);
             this.int2TextBox2.TabIndex = 9;
@@ -366,7 +364,7 @@
             // int2TextBox6
             // 
             this.int2TextBox6.Font = new System.Drawing.Font("Cambria", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.int2TextBox6.Location = new System.Drawing.Point(301, 107);
+            this.int2TextBox6.Location = new System.Drawing.Point(302, 107);
             this.int2TextBox6.Name = "int2TextBox6";
             this.int2TextBox6.Size = new System.Drawing.Size(31, 31);
             this.int2TextBox6.TabIndex = 7;
@@ -420,7 +418,7 @@
             this.int3TextBox4.Font = new System.Drawing.Font("Cambria", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.int3TextBox4.Location = new System.Drawing.Point(61, 145);
             this.int3TextBox4.Name = "int3TextBox4";
-            this.int3TextBox4.Size = new System.Drawing.Size(27, 28);
+            this.int3TextBox4.Size = new System.Drawing.Size(26, 28);
             this.int3TextBox4.TabIndex = 24;
             this.int3TextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.int3TextBox4.Enter += new System.EventHandler(this.textBox_Enter);
@@ -430,7 +428,7 @@
             this.int3TextBox6.Font = new System.Drawing.Font("Cambria", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.int3TextBox6.Location = new System.Drawing.Point(97, 145);
             this.int3TextBox6.Name = "int3TextBox6";
-            this.int3TextBox6.Size = new System.Drawing.Size(27, 28);
+            this.int3TextBox6.Size = new System.Drawing.Size(26, 28);
             this.int3TextBox6.TabIndex = 23;
             this.int3TextBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.int3TextBox6.Enter += new System.EventHandler(this.textBox_Enter);
@@ -440,7 +438,7 @@
             this.int3TextBox2.Font = new System.Drawing.Font("Cambria", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.int3TextBox2.Location = new System.Drawing.Point(21, 145);
             this.int3TextBox2.Name = "int3TextBox2";
-            this.int3TextBox2.Size = new System.Drawing.Size(27, 28);
+            this.int3TextBox2.Size = new System.Drawing.Size(26, 28);
             this.int3TextBox2.TabIndex = 22;
             this.int3TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.int3TextBox2.Enter += new System.EventHandler(this.textBox_Enter);
@@ -472,7 +470,7 @@
             this.int3TextBox3.Font = new System.Drawing.Font("Cambria", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.int3TextBox3.Location = new System.Drawing.Point(72, 69);
             this.int3TextBox3.Name = "int3TextBox3";
-            this.int3TextBox3.Size = new System.Drawing.Size(27, 28);
+            this.int3TextBox3.Size = new System.Drawing.Size(26, 28);
             this.int3TextBox3.TabIndex = 19;
             this.int3TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.int3TextBox3.Enter += new System.EventHandler(this.textBox_Enter);
@@ -482,7 +480,7 @@
             this.int3TextBox5.Font = new System.Drawing.Font("Cambria", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.int3TextBox5.Location = new System.Drawing.Point(108, 69);
             this.int3TextBox5.Name = "int3TextBox5";
-            this.int3TextBox5.Size = new System.Drawing.Size(27, 28);
+            this.int3TextBox5.Size = new System.Drawing.Size(26, 28);
             this.int3TextBox5.TabIndex = 18;
             this.int3TextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.int3TextBox5.Enter += new System.EventHandler(this.textBox_Enter);
@@ -513,7 +511,7 @@
             this.int3TextBox1.Font = new System.Drawing.Font("Cambria", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.int3TextBox1.Location = new System.Drawing.Point(32, 69);
             this.int3TextBox1.Name = "int3TextBox1";
-            this.int3TextBox1.Size = new System.Drawing.Size(27, 28);
+            this.int3TextBox1.Size = new System.Drawing.Size(26, 28);
             this.int3TextBox1.TabIndex = 16;
             this.int3TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.int3TextBox1.Enter += new System.EventHandler(this.textBox_Enter);
@@ -550,8 +548,6 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.infinityButton);
-            this.tabPage3.Controls.Add(this.label3);
             this.tabPage3.Controls.Add(this.directionComboBox);
             this.tabPage3.Controls.Add(this.label2);
             this.tabPage3.Controls.Add(this.limTextBox2);
@@ -567,25 +563,6 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Giới hạn";
             this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // infinityButton
-            // 
-            this.infinityButton.Font = new System.Drawing.Font("Cambria", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.infinityButton.Location = new System.Drawing.Point(168, 300);
-            this.infinityButton.Name = "infinityButton";
-            this.infinityButton.Size = new System.Drawing.Size(37, 31);
-            this.infinityButton.TabIndex = 8;
-            this.infinityButton.UseVisualStyleBackColor = true;
-            this.infinityButton.Click += new System.EventHandler(this.infinityButton_Click);
-            // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(9, 277);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(445, 70);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Để chương trình nhận dấu vô cực, bạn gõ \'infinity\' hoặc nhấp vào đây";
             // 
             // directionComboBox
             // 
@@ -664,17 +641,17 @@
             // tabPage7
             // 
             this.tabPage7.Controls.Add(this.richTextBox1);
-            this.tabPage7.Location = new System.Drawing.Point(4, 27);
+            this.tabPage7.Location = new System.Drawing.Point(4, 26);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(457, 404);
+            this.tabPage7.Size = new System.Drawing.Size(457, 405);
             this.tabPage7.TabIndex = 3;
             this.tabPage7.Text = "Test";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(31, 82);
+            this.richTextBox1.Location = new System.Drawing.Point(32, 82);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(373, 84);
             this.richTextBox1.TabIndex = 0;
@@ -685,7 +662,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Location = new System.Drawing.Point(517, 18);
+            this.label1.Location = new System.Drawing.Point(518, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 20);
             this.label1.TabIndex = 4;
@@ -697,7 +674,7 @@
             this.waitingLabel.BackColor = System.Drawing.Color.White;
             this.waitingLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.waitingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.waitingLabel.Location = new System.Drawing.Point(599, 18);
+            this.waitingLabel.Location = new System.Drawing.Point(598, 18);
             this.waitingLabel.Name = "waitingLabel";
             this.waitingLabel.Size = new System.Drawing.Size(81, 20);
             this.waitingLabel.TabIndex = 5;
@@ -708,17 +685,17 @@
             // 
             this.resultPictureBox.BackColor = System.Drawing.Color.White;
             this.resultPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.resultPictureBox.Location = new System.Drawing.Point(517, 32);
+            this.resultPictureBox.Location = new System.Drawing.Point(518, 32);
             this.resultPictureBox.Margin = new System.Windows.Forms.Padding(4);
             this.resultPictureBox.Name = "resultPictureBox";
-            this.resultPictureBox.Size = new System.Drawing.Size(403, 575);
+            this.resultPictureBox.Size = new System.Drawing.Size(402, 575);
             this.resultPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.resultPictureBox.TabIndex = 1;
             this.resultPictureBox.TabStop = false;
             // 
             // piButton
             // 
-            this.piButton.Location = new System.Drawing.Point(119, 54);
+            this.piButton.Location = new System.Drawing.Point(14, 54);
             this.piButton.Name = "piButton";
             this.piButton.Size = new System.Drawing.Size(99, 33);
             this.piButton.TabIndex = 13;
@@ -728,7 +705,7 @@
             // 
             // sigmaButton
             // 
-            this.sigmaButton.Location = new System.Drawing.Point(14, 54);
+            this.sigmaButton.Location = new System.Drawing.Point(119, 54);
             this.sigmaButton.Name = "sigmaButton";
             this.sigmaButton.Size = new System.Drawing.Size(99, 33);
             this.sigmaButton.TabIndex = 12;
@@ -771,22 +748,24 @@
             this.resetButton.TabIndex = 15;
             this.resetButton.Text = "Đặt lại";
             this.resetButton.UseVisualStyleBackColor = false;
+            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
             // 
-            // button1
+            // infinityButton
             // 
-            this.button1.Location = new System.Drawing.Point(224, 15);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 33);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Vô cực";
-            this.button1.UseVisualStyleBackColor = true;
+            this.infinityButton.Location = new System.Drawing.Point(224, 15);
+            this.infinityButton.Name = "infinityButton";
+            this.infinityButton.Size = new System.Drawing.Size(99, 33);
+            this.infinityButton.TabIndex = 14;
+            this.infinityButton.Text = "Vô cực";
+            this.infinityButton.UseVisualStyleBackColor = true;
+            this.infinityButton.Click += new System.EventHandler(this.infinityButton_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.noteLabel);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.infinityButton);
             this.panel1.Controls.Add(this.cbrtButton);
             this.panel1.Controls.Add(this.piButton);
             this.panel1.Controls.Add(this.sigmaButton);
@@ -834,6 +813,7 @@
             this.settingsButton.TabIndex = 18;
             this.settingsButton.Text = "Cài đặt";
             this.settingsButton.UseVisualStyleBackColor = false;
+            this.settingsButton.Click += new System.EventHandler(this.settingsButton_Click);
             // 
             // MainForm
             // 
@@ -902,8 +882,6 @@
         private System.Windows.Forms.TextBox limTextBox2;
         private System.Windows.Forms.TextBox limTextBox1;
         private System.Windows.Forms.TextBox limTextBox3;
-        private System.Windows.Forms.Button infinityButton;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox directionComboBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox intTextBox2;
@@ -944,7 +922,7 @@
         private System.Windows.Forms.Button cbrtButton;
         private System.Windows.Forms.Button sqrtButton;
         private System.Windows.Forms.Button resetButton;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button infinityButton;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label noteLabel;
         private System.Windows.Forms.Label label6;
