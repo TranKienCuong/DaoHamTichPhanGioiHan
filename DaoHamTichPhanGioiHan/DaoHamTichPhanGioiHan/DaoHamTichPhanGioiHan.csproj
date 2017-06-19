@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InformationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InformationForm.Designer.cs">
+      <DependentUpon>InformationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,9 @@
     <Compile Include="SettingsForm.Designer.cs">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="InformationForm.resx">
+      <DependentUpon>InformationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -133,6 +142,66 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Syntax\a!.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Syntax\a^b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Syntax\abs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Syntax\cbrt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Syntax\cos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Syntax\diff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Syntax\e.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Syntax\infinity.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Syntax\int.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Syntax\int2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Syntax\lim.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Syntax\ln.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Syntax\log.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Syntax\nroot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Syntax\pi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Syntax\product.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Syntax\sin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Syntax\sqrt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Syntax\sum.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Syntax\tan.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

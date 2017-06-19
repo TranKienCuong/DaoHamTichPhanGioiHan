@@ -24,12 +24,12 @@ namespace DaoHamTichPhanGioiHan
 
         string document;
         string beginDoc = @"
-            \documentclass[12pt,a4paper]{report}
+            \documentclass[12pt,b5paper]{report}
             \usepackage{amssymb}
             \usepackage{amsmath}
             \usepackage[utf8]{inputenc}
             \usepackage[vietnamese]{babel}
-            \usepackage[margin=0.5cm]{geometry}
+            \usepackage[landscape,margin=0.5cm]{geometry}
             \begin{document}
             \pagestyle{empty}
             \fussy
@@ -40,6 +40,7 @@ namespace DaoHamTichPhanGioiHan
         StreamWriter writer;
 
         int displayResultOption = 0;
+        int waitingTime = 30000;
 
         int imageIndex = 0;
         int imageCount = 1;
@@ -108,9 +109,8 @@ namespace DaoHamTichPhanGioiHan
                 process.StartInfo.CreateNoWindow = true;
 
                 process.Start();
-                process.WaitForExit(20000);
+                process.WaitForExit(waitingTime);
 
-                //resultPictureBox.ImageLocation = "output.png";
                 string pattern = "output*.png";
                 string[] dirs = Directory.GetFiles(Directory.GetCurrentDirectory(), pattern);
                 if (dirs.Length == 0)
@@ -268,28 +268,34 @@ namespace DaoHamTichPhanGioiHan
 
         private void infinityButton_Click(object sender, EventArgs e)
         {
+            noteLabel.Visible = false;
             InsertSymbol(INFINITY_SYMBOL, 1);
+        }
+
+        private void piButton_Click(object sender, EventArgs e)
+        {
+            noteLabel.Visible = false;
+            InsertSymbol(PI_SYMBOL, 1);
         }
 
         private void sqrtButton_Click(object sender, EventArgs e)
         {
+            noteLabel.Visible = true;
+            noteLabel.Text = "Cú pháp : " + SQRT_SYMBOL + " (f)";
             InsertSymbol(SQRT_SYMBOL + "(", 2);
         }
 
         private void cbrtButton_Click(object sender, EventArgs e)
         {
+            noteLabel.Visible = true;
+            noteLabel.Text = "Cú pháp : " + CBRT_SYMBOL + " (f)";
             InsertSymbol(CBRT_SYMBOL + "(", 2);
         }     
-
-        private void piButton_Click(object sender, EventArgs e)
-        {
-            InsertSymbol(PI_SYMBOL, 1);
-        }
 
         private void sigmaButton_Click(object sender, EventArgs e)
         {
             noteLabel.Visible = true;
-            noteLabel.Text = "Cú pháp là :" + SIGMA_SYMBOL + " [i= , ]( nội dung)";
+            noteLabel.Text = "Cú pháp : " + SIGMA_SYMBOL + " (f, i = k .. n)";
             InsertSymbol(SIGMA_SYMBOL + "(", 2);
         }
 
@@ -349,8 +355,12 @@ namespace DaoHamTichPhanGioiHan
         {
             SettingsForm settingsForm = new SettingsForm();
             settingsForm.displayResultOption = this.displayResultOption;
+            settingsForm.waitingTime = this.waitingTime;
             if (settingsForm.ShowDialog() == DialogResult.OK)
+            {
                 this.displayResultOption = settingsForm.displayResultOption;
+                this.waitingTime = settingsForm.waitingTime;
+            }
         }
 
         private void previousButton_Click(object sender, EventArgs e)
@@ -377,6 +387,11 @@ namespace DaoHamTichPhanGioiHan
                     nextButton.Enabled = false;
                 previousButton.Enabled = true;
             }
+        }
+
+        private void infoButton_Click(object sender, EventArgs e)
+        {
+            new InformationForm().Show();
         }
     }
 }

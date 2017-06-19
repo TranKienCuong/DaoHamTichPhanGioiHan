@@ -12,7 +12,8 @@ namespace DaoHamTichPhanGioiHan
 {
     public partial class SettingsForm : Form
     {
-        public int displayResultOption;
+        public int displayResultOption = 0;
+        public int waitingTime = 30000;
 
         public SettingsForm()
         {
@@ -33,6 +34,7 @@ namespace DaoHamTichPhanGioiHan
                     radioButton3.Checked = true;
                     break;
             }
+            numericUpDown1.Value = (waitingTime / 1000);
         }
 
         private void okButton_Click(object sender, EventArgs e)
@@ -43,6 +45,9 @@ namespace DaoHamTichPhanGioiHan
                 displayResultOption = 1;
             else
                 displayResultOption = 2;
+
+            waitingTime = (int)numericUpDown1.Value * 1000;
+
             DialogResult = DialogResult.OK;
         }
 
