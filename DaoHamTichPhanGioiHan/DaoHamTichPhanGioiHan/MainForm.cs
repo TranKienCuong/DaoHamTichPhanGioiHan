@@ -20,7 +20,7 @@ namespace DaoHamTichPhanGioiHan
         const string SIGMA_SYMBOL = "\u2211";
         const string PI_SYMBOL = "\u220F";
 
-        private TextBox focusedTextBox;
+        TextBox focusedTextBox;
 
         string document;
         string beginDoc = @"
@@ -40,6 +40,9 @@ namespace DaoHamTichPhanGioiHan
         StreamWriter writer;
 
         int displayResultOption = 0;
+
+        int imageIndex = 0;
+        int imageCount = 1;
 
         public MainForm()
         {
@@ -90,11 +93,6 @@ namespace DaoHamTichPhanGioiHan
             return text;
         }
 
-        public void FindResult(string input)
-        {
-
-        }
-
         public void DisplayText(string text)
         {
             try
@@ -112,7 +110,33 @@ namespace DaoHamTichPhanGioiHan
                 process.Start();
                 process.WaitForExit(20000);
 
-                resultPictureBox.ImageLocation = "output.png";
+                //resultPictureBox.ImageLocation = "output.png";
+                string pattern = "output*.png";
+                string[] dirs = Directory.GetFiles(Directory.GetCurrentDirectory(), pattern);
+                if (dirs.Length == 0)
+                {
+                    resultPictureBox.Image = Properties.Resources.error;
+                    imageIndex = -1;
+                    imageCount = 0;
+                }
+                else if (dirs.Length == 1)
+                {
+                    resultPictureBox.ImageLocation = "output.png";
+                    imageIndex = 0;
+                    imageCount = 1;
+                }
+                else
+                {
+                    resultPictureBox.ImageLocation = "output-0.png";
+                    imageIndex = 0;
+                    imageCount = dirs.Length;
+                }
+                pageLabel.Text = (imageIndex + 1) + "/" + imageCount;
+                previousButton.Enabled = false;
+                if (imageCount <= 1)
+                    nextButton.Enabled = false;
+                else
+                    nextButton.Enabled = true;
 
                 document = beginDoc;
             }
@@ -142,6 +166,11 @@ namespace DaoHamTichPhanGioiHan
 
         private void solveButton_Click(object sender, EventArgs e)
         {
+            string pattern = "output*.png";
+            string[] dirs = Directory.GetFiles(Directory.GetCurrentDirectory(), pattern);
+            foreach (string dir in dirs)
+                File.Delete(dir);
+
             waitingLabel.Visible = true;
 
             string input = "";
@@ -322,6 +351,32 @@ namespace DaoHamTichPhanGioiHan
             settingsForm.displayResultOption = this.displayResultOption;
             if (settingsForm.ShowDialog() == DialogResult.OK)
                 this.displayResultOption = settingsForm.displayResultOption;
+        }
+
+        private void previousButton_Click(object sender, EventArgs e)
+        {
+            if (imageIndex > 0)
+            {
+                imageIndex--;
+                resultPictureBox.ImageLocation = "output-" + imageIndex + ".png";
+                pageLabel.Text = (imageIndex + 1) + "/" + imageCount;
+                if (imageIndex == 0)
+                    previousButton.Enabled = false;
+                nextButton.Enabled = true;
+            }
+        }
+
+        private void nextButton_Click(object sender, EventArgs e)
+        {
+            if (imageIndex < imageCount - 1)
+            {
+                imageIndex++;
+                resultPictureBox.ImageLocation = "output-" + imageIndex + ".png";
+                pageLabel.Text = (imageIndex + 1) + "/" + imageCount;
+                if (imageIndex == imageCount - 1)
+                    nextButton.Enabled = false;
+                previousButton.Enabled = true;
+            }
         }
     }
 }
