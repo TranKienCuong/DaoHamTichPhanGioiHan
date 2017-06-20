@@ -78,7 +78,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.waitingLabel = new System.Windows.Forms.Label();
             this.resultPictureBox = new System.Windows.Forms.PictureBox();
@@ -96,6 +95,7 @@
             this.nextButton = new System.Windows.Forms.Button();
             this.pageLabel = new System.Windows.Forms.Label();
             this.infoButton = new System.Windows.Forms.Button();
+            this.customTextBox = new System.Windows.Forms.TextBox();
             this.mainTabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -126,7 +126,7 @@
             this.solveButton.Margin = new System.Windows.Forms.Padding(4);
             this.solveButton.Name = "solveButton";
             this.solveButton.Size = new System.Drawing.Size(102, 37);
-            this.solveButton.TabIndex = 2;
+            this.solveButton.TabIndex = 11;
             this.solveButton.Text = "Tính";
             this.solveButton.UseVisualStyleBackColor = false;
             this.solveButton.Click += new System.EventHandler(this.solveButton_Click);
@@ -179,10 +179,11 @@
             this.diffTextBox2.Location = new System.Drawing.Point(172, 70);
             this.diffTextBox2.Name = "diffTextBox2";
             this.diffTextBox2.Size = new System.Drawing.Size(81, 28);
-            this.diffTextBox2.TabIndex = 3;
+            this.diffTextBox2.TabIndex = 2;
             this.diffTextBox2.Text = "x";
             this.diffTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.diffTextBox2.Enter += new System.EventHandler(this.textBox_Enter);
+            this.diffTextBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_KeyDown);
             // 
             // diffTextBox1
             // 
@@ -190,9 +191,10 @@
             this.diffTextBox1.Location = new System.Drawing.Point(112, 17);
             this.diffTextBox1.Name = "diffTextBox1";
             this.diffTextBox1.Size = new System.Drawing.Size(200, 28);
-            this.diffTextBox1.TabIndex = 2;
+            this.diffTextBox1.TabIndex = 1;
             this.diffTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.diffTextBox1.Enter += new System.EventHandler(this.textBox_Enter);
+            this.diffTextBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_KeyDown);
             // 
             // pictureBox2
             // 
@@ -252,9 +254,10 @@
             this.intTextBox3.Location = new System.Drawing.Point(73, 38);
             this.intTextBox3.Name = "intTextBox3";
             this.intTextBox3.Size = new System.Drawing.Size(200, 28);
-            this.intTextBox3.TabIndex = 1;
+            this.intTextBox3.TabIndex = 3;
             this.intTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.intTextBox3.Enter += new System.EventHandler(this.textBox_Enter);
+            this.intTextBox3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_KeyDown);
             // 
             // intTextBox2
             // 
@@ -262,9 +265,10 @@
             this.intTextBox2.Location = new System.Drawing.Point(27, 74);
             this.intTextBox2.Name = "intTextBox2";
             this.intTextBox2.Size = new System.Drawing.Size(38, 25);
-            this.intTextBox2.TabIndex = 4;
+            this.intTextBox2.TabIndex = 2;
             this.intTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.intTextBox2.Enter += new System.EventHandler(this.textBox_Enter);
+            this.intTextBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_KeyDown);
             // 
             // intTextBox4
             // 
@@ -272,10 +276,11 @@
             this.intTextBox4.Location = new System.Drawing.Point(320, 38);
             this.intTextBox4.Name = "intTextBox4";
             this.intTextBox4.Size = new System.Drawing.Size(42, 28);
-            this.intTextBox4.TabIndex = 2;
+            this.intTextBox4.TabIndex = 4;
             this.intTextBox4.Text = "x";
             this.intTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.intTextBox4.Enter += new System.EventHandler(this.textBox_Enter);
+            this.intTextBox4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_KeyDown);
             // 
             // intTextBox1
             // 
@@ -283,9 +288,10 @@
             this.intTextBox1.Location = new System.Drawing.Point(38, 6);
             this.intTextBox1.Name = "intTextBox1";
             this.intTextBox1.Size = new System.Drawing.Size(38, 25);
-            this.intTextBox1.TabIndex = 3;
+            this.intTextBox1.TabIndex = 1;
             this.intTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.intTextBox1.Enter += new System.EventHandler(this.textBox_Enter);
+            this.intTextBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_KeyDown);
             // 
             // pictureBox3
             // 
@@ -322,10 +328,11 @@
             this.int2TextBox7.Location = new System.Drawing.Point(340, 36);
             this.int2TextBox7.Name = "int2TextBox7";
             this.int2TextBox7.Size = new System.Drawing.Size(25, 26);
-            this.int2TextBox7.TabIndex = 12;
+            this.int2TextBox7.TabIndex = 7;
             this.int2TextBox7.Text = "y";
             this.int2TextBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.int2TextBox7.Enter += new System.EventHandler(this.textBox_Enter);
+            this.int2TextBox7.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_KeyDown);
             // 
             // int2TextBox3
             // 
@@ -333,9 +340,10 @@
             this.int2TextBox3.Location = new System.Drawing.Point(69, 6);
             this.int2TextBox3.Name = "int2TextBox3";
             this.int2TextBox3.Size = new System.Drawing.Size(29, 25);
-            this.int2TextBox3.TabIndex = 11;
+            this.int2TextBox3.TabIndex = 3;
             this.int2TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.int2TextBox3.Enter += new System.EventHandler(this.textBox_Enter);
+            this.int2TextBox3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_KeyDown);
             // 
             // int2TextBox4
             // 
@@ -343,9 +351,10 @@
             this.int2TextBox4.Location = new System.Drawing.Point(60, 72);
             this.int2TextBox4.Name = "int2TextBox4";
             this.int2TextBox4.Size = new System.Drawing.Size(29, 25);
-            this.int2TextBox4.TabIndex = 10;
+            this.int2TextBox4.TabIndex = 4;
             this.int2TextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.int2TextBox4.Enter += new System.EventHandler(this.textBox_Enter);
+            this.int2TextBox4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_KeyDown);
             // 
             // int2TextBox5
             // 
@@ -353,9 +362,10 @@
             this.int2TextBox5.Location = new System.Drawing.Point(99, 36);
             this.int2TextBox5.Name = "int2TextBox5";
             this.int2TextBox5.Size = new System.Drawing.Size(143, 26);
-            this.int2TextBox5.TabIndex = 6;
+            this.int2TextBox5.TabIndex = 5;
             this.int2TextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.int2TextBox5.Enter += new System.EventHandler(this.textBox_Enter);
+            this.int2TextBox5.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_KeyDown);
             // 
             // int2TextBox2
             // 
@@ -363,9 +373,10 @@
             this.int2TextBox2.Location = new System.Drawing.Point(19, 72);
             this.int2TextBox2.Name = "int2TextBox2";
             this.int2TextBox2.Size = new System.Drawing.Size(29, 25);
-            this.int2TextBox2.TabIndex = 9;
+            this.int2TextBox2.TabIndex = 2;
             this.int2TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.int2TextBox2.Enter += new System.EventHandler(this.textBox_Enter);
+            this.int2TextBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_KeyDown);
             // 
             // int2TextBox6
             // 
@@ -373,10 +384,11 @@
             this.int2TextBox6.Location = new System.Drawing.Point(278, 36);
             this.int2TextBox6.Name = "int2TextBox6";
             this.int2TextBox6.Size = new System.Drawing.Size(25, 26);
-            this.int2TextBox6.TabIndex = 7;
+            this.int2TextBox6.TabIndex = 6;
             this.int2TextBox6.Text = "x";
             this.int2TextBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.int2TextBox6.Enter += new System.EventHandler(this.textBox_Enter);
+            this.int2TextBox6.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_KeyDown);
             // 
             // int2TextBox1
             // 
@@ -384,9 +396,10 @@
             this.int2TextBox1.Location = new System.Drawing.Point(28, 7);
             this.int2TextBox1.Name = "int2TextBox1";
             this.int2TextBox1.Size = new System.Drawing.Size(29, 25);
-            this.int2TextBox1.TabIndex = 8;
+            this.int2TextBox1.TabIndex = 1;
             this.int2TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.int2TextBox1.Enter += new System.EventHandler(this.textBox_Enter);
+            this.int2TextBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_KeyDown);
             // 
             // pictureBox4
             // 
@@ -425,9 +438,10 @@
             this.int3TextBox4.Location = new System.Drawing.Point(51, 65);
             this.int3TextBox4.Name = "int3TextBox4";
             this.int3TextBox4.Size = new System.Drawing.Size(24, 25);
-            this.int3TextBox4.TabIndex = 24;
+            this.int3TextBox4.TabIndex = 4;
             this.int3TextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.int3TextBox4.Enter += new System.EventHandler(this.textBox_Enter);
+            this.int3TextBox4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_KeyDown);
             // 
             // int3TextBox6
             // 
@@ -435,9 +449,10 @@
             this.int3TextBox6.Location = new System.Drawing.Point(86, 65);
             this.int3TextBox6.Name = "int3TextBox6";
             this.int3TextBox6.Size = new System.Drawing.Size(24, 25);
-            this.int3TextBox6.TabIndex = 23;
+            this.int3TextBox6.TabIndex = 6;
             this.int3TextBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.int3TextBox6.Enter += new System.EventHandler(this.textBox_Enter);
+            this.int3TextBox6.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_KeyDown);
             // 
             // int3TextBox2
             // 
@@ -445,9 +460,10 @@
             this.int3TextBox2.Location = new System.Drawing.Point(16, 65);
             this.int3TextBox2.Name = "int3TextBox2";
             this.int3TextBox2.Size = new System.Drawing.Size(24, 25);
-            this.int3TextBox2.TabIndex = 22;
+            this.int3TextBox2.TabIndex = 2;
             this.int3TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.int3TextBox2.Enter += new System.EventHandler(this.textBox_Enter);
+            this.int3TextBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_KeyDown);
             // 
             // int3TextBox10
             // 
@@ -455,10 +471,11 @@
             this.int3TextBox10.Location = new System.Drawing.Point(348, 36);
             this.int3TextBox10.Name = "int3TextBox10";
             this.int3TextBox10.Size = new System.Drawing.Size(23, 26);
-            this.int3TextBox10.TabIndex = 21;
+            this.int3TextBox10.TabIndex = 10;
             this.int3TextBox10.Text = "z";
             this.int3TextBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.int3TextBox10.Enter += new System.EventHandler(this.textBox_Enter);
+            this.int3TextBox10.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_KeyDown);
             // 
             // int3TextBox9
             // 
@@ -466,10 +483,11 @@
             this.int3TextBox9.Location = new System.Drawing.Point(297, 36);
             this.int3TextBox9.Name = "int3TextBox9";
             this.int3TextBox9.Size = new System.Drawing.Size(23, 26);
-            this.int3TextBox9.TabIndex = 20;
+            this.int3TextBox9.TabIndex = 9;
             this.int3TextBox9.Text = "y";
             this.int3TextBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.int3TextBox9.Enter += new System.EventHandler(this.textBox_Enter);
+            this.int3TextBox9.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_KeyDown);
             // 
             // int3TextBox3
             // 
@@ -477,9 +495,10 @@
             this.int3TextBox3.Location = new System.Drawing.Point(59, 10);
             this.int3TextBox3.Name = "int3TextBox3";
             this.int3TextBox3.Size = new System.Drawing.Size(24, 25);
-            this.int3TextBox3.TabIndex = 19;
+            this.int3TextBox3.TabIndex = 3;
             this.int3TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.int3TextBox3.Enter += new System.EventHandler(this.textBox_Enter);
+            this.int3TextBox3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_KeyDown);
             // 
             // int3TextBox5
             // 
@@ -487,9 +506,10 @@
             this.int3TextBox5.Location = new System.Drawing.Point(92, 11);
             this.int3TextBox5.Name = "int3TextBox5";
             this.int3TextBox5.Size = new System.Drawing.Size(24, 25);
-            this.int3TextBox5.TabIndex = 18;
+            this.int3TextBox5.TabIndex = 5;
             this.int3TextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.int3TextBox5.Enter += new System.EventHandler(this.textBox_Enter);
+            this.int3TextBox5.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_KeyDown);
             // 
             // int3TextBox7
             // 
@@ -497,9 +517,10 @@
             this.int3TextBox7.Location = new System.Drawing.Point(116, 36);
             this.int3TextBox7.Name = "int3TextBox7";
             this.int3TextBox7.Size = new System.Drawing.Size(101, 26);
-            this.int3TextBox7.TabIndex = 14;
+            this.int3TextBox7.TabIndex = 7;
             this.int3TextBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.int3TextBox7.Enter += new System.EventHandler(this.textBox_Enter);
+            this.int3TextBox7.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_KeyDown);
             // 
             // int3TextBox8
             // 
@@ -507,10 +528,11 @@
             this.int3TextBox8.Location = new System.Drawing.Point(245, 36);
             this.int3TextBox8.Name = "int3TextBox8";
             this.int3TextBox8.Size = new System.Drawing.Size(23, 26);
-            this.int3TextBox8.TabIndex = 15;
+            this.int3TextBox8.TabIndex = 8;
             this.int3TextBox8.Text = "x";
             this.int3TextBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.int3TextBox8.Enter += new System.EventHandler(this.textBox_Enter);
+            this.int3TextBox8.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_KeyDown);
             // 
             // int3TextBox1
             // 
@@ -518,9 +540,10 @@
             this.int3TextBox1.Location = new System.Drawing.Point(23, 11);
             this.int3TextBox1.Name = "int3TextBox1";
             this.int3TextBox1.Size = new System.Drawing.Size(24, 25);
-            this.int3TextBox1.TabIndex = 16;
+            this.int3TextBox1.TabIndex = 1;
             this.int3TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.int3TextBox1.Enter += new System.EventHandler(this.textBox_Enter);
+            this.int3TextBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_KeyDown);
             // 
             // pictureBox5
             // 
@@ -581,7 +604,7 @@
             this.directionComboBox.Location = new System.Drawing.Point(274, 104);
             this.directionComboBox.Name = "directionComboBox";
             this.directionComboBox.Size = new System.Drawing.Size(125, 25);
-            this.directionComboBox.TabIndex = 6;
+            this.directionComboBox.TabIndex = 4;
             this.directionComboBox.SelectedIndexChanged += new System.EventHandler(this.directionComboBox_SelectedIndexChanged);
             // 
             // label2
@@ -600,9 +623,10 @@
             this.limTextBox2.Location = new System.Drawing.Point(88, 62);
             this.limTextBox2.Name = "limTextBox2";
             this.limTextBox2.Size = new System.Drawing.Size(41, 26);
-            this.limTextBox2.TabIndex = 3;
+            this.limTextBox2.TabIndex = 2;
             this.limTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.limTextBox2.Enter += new System.EventHandler(this.textBox_Enter);
+            this.limTextBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_KeyDown);
             // 
             // signLabel
             // 
@@ -620,10 +644,11 @@
             this.limTextBox1.Location = new System.Drawing.Point(20, 62);
             this.limTextBox1.Name = "limTextBox1";
             this.limTextBox1.Size = new System.Drawing.Size(40, 26);
-            this.limTextBox1.TabIndex = 2;
+            this.limTextBox1.TabIndex = 1;
             this.limTextBox1.Text = "x";
             this.limTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.limTextBox1.Enter += new System.EventHandler(this.textBox_Enter);
+            this.limTextBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_KeyDown);
             // 
             // limTextBox3
             // 
@@ -631,9 +656,10 @@
             this.limTextBox3.Location = new System.Drawing.Point(148, 31);
             this.limTextBox3.Name = "limTextBox3";
             this.limTextBox3.Size = new System.Drawing.Size(230, 31);
-            this.limTextBox3.TabIndex = 1;
+            this.limTextBox3.TabIndex = 3;
             this.limTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.limTextBox3.Enter += new System.EventHandler(this.textBox_Enter);
+            this.limTextBox3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_KeyDown);
             // 
             // pictureBox1
             // 
@@ -647,8 +673,8 @@
             // 
             // tabPage7
             // 
+            this.tabPage7.Controls.Add(this.customTextBox);
             this.tabPage7.Controls.Add(this.label3);
-            this.tabPage7.Controls.Add(this.richTextBox1);
             this.tabPage7.Location = new System.Drawing.Point(4, 26);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
@@ -659,21 +685,13 @@
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(3, 3);
+            this.label3.Location = new System.Drawing.Point(3, 12);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(396, 55);
             this.label3.TabIndex = 1;
             this.label3.Text = "Tự nhập theo ý muốn, dùng ngôn ngữ Maple\r\nVD: Diff(x^2, x), Int(sqrt(x), x=1..2)," +
     " Limit(1/x, x=infinity),...";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(16, 61);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(368, 80);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
             // 
             // label1
             // 
@@ -716,7 +734,7 @@
             this.piButton.Location = new System.Drawing.Point(97, 7);
             this.piButton.Name = "piButton";
             this.piButton.Size = new System.Drawing.Size(88, 31);
-            this.piButton.TabIndex = 13;
+            this.piButton.TabIndex = 14;
             this.piButton.Text = "Pi";
             this.piButton.UseVisualStyleBackColor = true;
             this.piButton.Click += new System.EventHandler(this.piButton_Click);
@@ -726,7 +744,7 @@
             this.sigmaButton.Location = new System.Drawing.Point(191, 7);
             this.sigmaButton.Name = "sigmaButton";
             this.sigmaButton.Size = new System.Drawing.Size(88, 31);
-            this.sigmaButton.TabIndex = 12;
+            this.sigmaButton.TabIndex = 15;
             this.sigmaButton.Text = "Xích ma";
             this.sigmaButton.UseVisualStyleBackColor = true;
             this.sigmaButton.Click += new System.EventHandler(this.sigmaButton_Click);
@@ -736,7 +754,7 @@
             this.cbrtButton.Location = new System.Drawing.Point(97, 44);
             this.cbrtButton.Name = "cbrtButton";
             this.cbrtButton.Size = new System.Drawing.Size(88, 31);
-            this.cbrtButton.TabIndex = 11;
+            this.cbrtButton.TabIndex = 17;
             this.cbrtButton.Text = "Căn bậc 3";
             this.cbrtButton.UseVisualStyleBackColor = true;
             this.cbrtButton.Click += new System.EventHandler(this.cbrtButton_Click);
@@ -746,7 +764,7 @@
             this.sqrtButton.Location = new System.Drawing.Point(3, 44);
             this.sqrtButton.Name = "sqrtButton";
             this.sqrtButton.Size = new System.Drawing.Size(88, 31);
-            this.sqrtButton.TabIndex = 10;
+            this.sqrtButton.TabIndex = 16;
             this.sqrtButton.Text = "Căn bậc 2";
             this.sqrtButton.UseVisualStyleBackColor = true;
             this.sqrtButton.Click += new System.EventHandler(this.sqrtButton_Click);
@@ -763,7 +781,7 @@
             this.resetButton.Margin = new System.Windows.Forms.Padding(4);
             this.resetButton.Name = "resetButton";
             this.resetButton.Size = new System.Drawing.Size(102, 37);
-            this.resetButton.TabIndex = 15;
+            this.resetButton.TabIndex = 12;
             this.resetButton.Text = "Đặt lại";
             this.resetButton.UseVisualStyleBackColor = false;
             this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
@@ -773,7 +791,7 @@
             this.infinityButton.Location = new System.Drawing.Point(3, 7);
             this.infinityButton.Name = "infinityButton";
             this.infinityButton.Size = new System.Drawing.Size(88, 31);
-            this.infinityButton.TabIndex = 14;
+            this.infinityButton.TabIndex = 13;
             this.infinityButton.Text = "Vô cực";
             this.infinityButton.UseVisualStyleBackColor = true;
             this.infinityButton.Click += new System.EventHandler(this.infinityButton_Click);
@@ -829,7 +847,7 @@
             this.settingsButton.Margin = new System.Windows.Forms.Padding(4);
             this.settingsButton.Name = "settingsButton";
             this.settingsButton.Size = new System.Drawing.Size(102, 37);
-            this.settingsButton.TabIndex = 18;
+            this.settingsButton.TabIndex = 19;
             this.settingsButton.Text = "Cài đặt";
             this.settingsButton.UseVisualStyleBackColor = false;
             this.settingsButton.Click += new System.EventHandler(this.settingsButton_Click);
@@ -840,7 +858,7 @@
             this.previousButton.Location = new System.Drawing.Point(357, 211);
             this.previousButton.Name = "previousButton";
             this.previousButton.Size = new System.Drawing.Size(42, 27);
-            this.previousButton.TabIndex = 19;
+            this.previousButton.TabIndex = 20;
             this.previousButton.Text = "<";
             this.previousButton.UseVisualStyleBackColor = true;
             this.previousButton.Click += new System.EventHandler(this.previousButton_Click);
@@ -851,7 +869,7 @@
             this.nextButton.Location = new System.Drawing.Point(466, 211);
             this.nextButton.Name = "nextButton";
             this.nextButton.Size = new System.Drawing.Size(42, 27);
-            this.nextButton.TabIndex = 20;
+            this.nextButton.TabIndex = 21;
             this.nextButton.Text = ">";
             this.nextButton.UseVisualStyleBackColor = true;
             this.nextButton.Click += new System.EventHandler(this.nextButton_Click);
@@ -878,10 +896,19 @@
             this.infoButton.Margin = new System.Windows.Forms.Padding(4);
             this.infoButton.Name = "infoButton";
             this.infoButton.Size = new System.Drawing.Size(102, 37);
-            this.infoButton.TabIndex = 22;
+            this.infoButton.TabIndex = 18;
             this.infoButton.Text = "Thông tin";
             this.infoButton.UseVisualStyleBackColor = false;
             this.infoButton.Click += new System.EventHandler(this.infoButton_Click);
+            // 
+            // customTextBox
+            // 
+            this.customTextBox.Location = new System.Drawing.Point(14, 84);
+            this.customTextBox.Name = "customTextBox";
+            this.customTextBox.Size = new System.Drawing.Size(375, 25);
+            this.customTextBox.TabIndex = 2;
+            this.customTextBox.Enter += new System.EventHandler(this.textBox_Enter);
+            this.customTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_KeyDown);
             // 
             // MainForm
             // 
@@ -929,6 +956,7 @@
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage7.ResumeLayout(false);
+            this.tabPage7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resultPictureBox)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -987,7 +1015,6 @@
         private System.Windows.Forms.TextBox int3TextBox1;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.TabPage tabPage7;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Button piButton;
         private System.Windows.Forms.Button sigmaButton;
@@ -1004,6 +1031,7 @@
         private System.Windows.Forms.Label pageLabel;
         private System.Windows.Forms.Button infoButton;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox customTextBox;
     }
 }
 

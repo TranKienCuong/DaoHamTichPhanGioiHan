@@ -230,8 +230,8 @@ namespace DaoHamTichPhanGioiHan
                             break;
                     }
                     break;
-                case 3: // test
-                    input = richTextBox1.Text;
+                case 3: // custom
+                    input = customTextBox.Text;
                     break;
             }
             input = input.Replace(INFINITY_SYMBOL, "infinity")
@@ -264,6 +264,15 @@ namespace DaoHamTichPhanGioiHan
         private void textBox_Enter(object sender, EventArgs e)
         {
             focusedTextBox = (TextBox)sender;
+        }
+
+        private void textBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                solveButton.PerformClick();
+                e.SuppressKeyPress = true;
+            }
         }
 
         private void infinityButton_Click(object sender, EventArgs e)
@@ -346,7 +355,7 @@ namespace DaoHamTichPhanGioiHan
                     directionComboBox.SelectedIndex = 0;
                     break;
                 case 3:
-                    richTextBox1.Clear();
+                    customTextBox.Clear();
                     break;
             }
         }
