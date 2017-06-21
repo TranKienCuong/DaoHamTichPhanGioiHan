@@ -24,7 +24,7 @@ namespace DaoHamTichPhanGioiHan
 
         string document;
         string beginDoc = @"
-            \documentclass[12pt,b5paper]{report}
+            \documentclass[12pt,a4paper]{report}
             \usepackage{amssymb}
             \usepackage{amsmath}
             \usepackage[utf8]{inputenc}

@@ -123,7 +123,7 @@
             this.label4.Size = new System.Drawing.Size(538, 70);
             this.label4.TabIndex = 4;
             this.label4.Text = "Chương trình yêu cầu các phần mềm hỗ trợ sau: Maple 2016, Miktex (với các package" +
-    " tải thêm: arabi, babel-vietnamese và vntex) và ImageMagick";
+    " tải thêm: arabi, babel-vietnamese và vntex), ImageMagick và Ghostscript";
             // 
             // InformationForm
             // 
